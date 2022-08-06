@@ -1,14 +1,14 @@
 <template>
 	<nav id="nav" class="navbar navbar-dark navbar-expand-lg">
-		<div class="container-fluid">
-			<div class="brand">
-				<a href="./index.html"
-					><img
-					style="background:black"
-						id="navlogo"
-						src="https://i.ibb.co/LvBgYgD/max-tutak-NOXMXHch-Eo-unsplash-removebg-preview.png"
-				/></a>
-			</div>
+		
+			<div id="box">
+<img id="watch"
+     src="https://i.ibb.co/VpqCFRQ/pat-taylor-12-V36-G17-Ib-Q-unsplash-removebg-preview.png">
+  
+  <img id= "man" src="https://i.ibb.co/3f3Xz3s/grigore-ricky-TVUUz6b-MFSQ-unsplash-removebg-preview.png">
+    
+    <img id= "plant" src="https://i.ibb.co/V2KyYCM/maarten-van-den-heuvel-Siuwr3u-Cir0-unsplash-removebg-preview.png">
+</div>
 			
 
 			<button
@@ -54,7 +54,7 @@
 					>
 				</li> -->
 			</div>
-		</div>
+		
 	</nav>
 </template>
 
@@ -97,15 +97,35 @@ body::-webkit-scrollbar-thumb {
 		width: 55px;
 	}
 	
-	#navbrand {
-		margin-top: -30px;
-	}
-	/* #logo3 {
-  color: white;
-   
-    font-style: italic;
-    font-weight: bold;
-} */
+	#box{
+  background-color:cream;
+  position:relative;
+
+}
+
+img{position:absolute}
+#man{
+  filter: drop-shadow(5px 2px 1px rgba(0, 0, 0, 0.458));
+  z-index:-500;
+}
+#man:hover{
+  transform: scale(1.2);
+}
+#watch{
+  transition: all ease-in-out 1s;
+  filter: drop-shadow(5px 2px 10px rgba(0, 0, 0, 0.49));
+  transform:rotate(45deg) scale(0.8);
+   right:45%;
+  margin-top:10%;
+}
+#watch:hover{
+  transform:rotate(45deg) scale(0.9);
+}
+#plant{
+  z-index:-1000;
+  padding:1%;
+  filter: drop-shadow(3px 2px 1px rgba(128, 128, 128, 0.411));
+}
 	#bar {
 		width: 20rem;
 	}

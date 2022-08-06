@@ -34,17 +34,24 @@ export default createStore({
 	actions: {
 		login: async (context, payload) => {
 			const { email, password } = payload;
-			const response = await fetch(
-				`http://localhost:3000/users?email=${email}&password=${password}`
-			);
+			const response = await fetch("http://localhost:8081/users/login",{
+					method:"POST",
+					body:JSON.stringify({
+						email:email,
+						password:password
+					}),  
+					headers: {
+						'Content-type': 'application/json',
+					  },
+						});
 			const userData = await response.json();
 			context.commit("setUser", userData[0]);
 		},
 		ShowProducts: async (context) => {
-			fetch("http://localhost:3000/products")
-				.then((response) => response.json())
-				.then((products) => context.commit("setProducts", products));
-		},
+		const res =	await fetch("http://localhost:8081/products");
+		const data = await res.json();	
+		context.commit("setProducts",data);	
+	},
 
 		// create user
 		signUp: async (context, data) => {

@@ -6,6 +6,10 @@ export default createStore({
 		products: null,
 		product: null,
 		asc: true,
+	},getters:{
+      GetProducts(){
+		state.products
+	  }
 	},
 	mutations: {
 		setUser: (state, user) => {
@@ -13,28 +17,28 @@ export default createStore({
 			asc = true;
 		},
 
-		setProduct: (state, product) => {
-			state.product = product;
-		},
-		setProducts: (state, products) => {
+		// setProduct: (state, product) => {
+		// 	state.product = product;
+		// },
+		setProducts(state, products){
 			state.products = products;
 		},
 
-		sortProductsByPrice: (state) => {
-			state.products = state.products.sort((a, b) => {
-				return a.price - b.price;
-			});
-			if (!state.asc) {
-				state.products.reverse();
-			}
-			state.asc = !state.asc;
-		},
+		// sortProductsByPrice: (state) => {
+		// 	state.products = state.products.sort((a, b) => {
+		// 		return a.price - b.price;
+		// 	});
+		// 	if (!state.asc) {
+		// 		state.products.reverse();
+		// 	}
+		// 	state.asc = !state.asc;
+		// },
 	},
 
 	actions: {
 		login: async (context, payload) => {
 			const { email, password } = payload;
-			const response = await fetch("http://localhost:8081/users/login",{
+			const response = await fetch("http://localhost:6969/users/login",{
 					method:"POST",
 					body:JSON.stringify({
 						email:email,
@@ -48,15 +52,15 @@ export default createStore({
 			context.commit("setUser", userData[0]);
 		},
 		ShowProducts: async (context) => {
-		const res =	await fetch("http://localhost:8081/products");
-		const data = await res.json();	
-		context.commit("setProducts",data);	
+		const res =	await fetch("http://localhost:6969/products")
+		.then(res => res.json())
+		.then(data => context.commit("setProducts",data) );	
 	},
 
 		// create user
 		signUp: async (context, data) => {
 			const { full_name, email, password, role } = data;
-			fetch("http://localhost:3000/users", {
+			fetch("http://localhost:6969/users", {
 				method: "POST",
 				body: JSON.stringify({
 					full_name: full_name,
@@ -74,36 +78,42 @@ export default createStore({
 
 		// open one card
 		showProduct: async (context) => {
-			fetch("http://localhost:3000/products" + id)
+			fetch("http://localhost:6969/products" + id)
 				.then((res) => res.json())
 				.then((products) => context.commit("setProducts", products));
 		},
 
 		// create a product
-		createProduct: async (context, payload) => {
-			const { artistName, artName, price, imgURL, description, category } =
-				payload;
-			fetch("http://localhost:3000/products", {
+		AddProduct: async (context,product) => {
+			// const { name,price, descriptions, category,weight,sku,thumbnail,image,create_date,stock } =
+			// 	payload;
+					 fetch("http://localhost:6969/products", {
 				method: "POST",
 				body: JSON.stringify({
-					artistName: artistName,
-					artName: artName,
-					price: price,
-					imgURL: imgURL,
-					description: description,
-					category: category,
+					sku:product.sku,
+					name:product.name,
+					price: product.price,
+					weight:product.weight,
+					descriptions:product.descriptions,
+					thumbnail:product.thumbnail,
+					image:product.image,
+					category:product.category,
+					create_date:product.create_date,  
+					stock:product.stock
 				}),
 				headers: {
 					"Content-type": "application/json; charset=UTF-8",
 				},
 			})
 				.then((response) => response.json())
-				.then(() => context.dispatch("ShowProducts"));
+				.then((data) =>
+				context.commit("setProducts",data)
+				);
 		},
 
 		// edit products
-		updateProduct: async (context, product) => {
-			fetch("http://localhost:3000/products" + piece.id, {
+		updateProduct: async (context, product,id) => {
+			fetch(`http://localhost:6969/products/:${id}`, {
 				method: "PUT",
 				body: JSON.stringify(product),
 				headers: {
@@ -111,16 +121,19 @@ export default createStore({
 				},
 			})
 				.then((response) => response.json())
-				.then(() => context.dispatch("ShowProducts"));
+				.then(() => context.dispatch("setProducts"));
 		},
 
 		// delete
 		deleteProduct: async (context, id) => {
-			fetch("http://localhost:3000/products/" + id, {
+			fetch(`http://localhost:6969/products/:${id}`, {
 				method: "DELETE",
+				headers: {
+					"Content-type": "application/json; charset=UTF-8",
+				},
 			})
 				.then((response) => response.json())
-				.then(() => context.dispatch("ShowProducts"));
+				.then(() => context.commit("setProducts"));
 		},
 	},
 });

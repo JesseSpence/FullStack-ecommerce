@@ -28,8 +28,8 @@ router.get("/:id",(req, res) => {
   }
 });
 
-router.post("/",middleware,(req,res) => {
-    if(req.user.user_type === "admin" ){
+router.post("/",(req,res) => {
+    // if(req.user.user_type === "admin" ){
 
 
         const product = {
@@ -54,9 +54,9 @@ router.post("/",middleware,(req,res) => {
           res.send(error)
           // console.log(error);
         }
-    }else{
-        res.send("Not ALLOWED")
-    }
+    // }else{
+    //     res.send("Not ALLOWED")
+    // }
 });
 
 // router.patch("/",(req,res)=>{
@@ -124,8 +124,8 @@ try {
 });
 
 
-router.delete("/:id",middleware,(req,res)=> {
-    if(req.user.user_type === "admin" ){
+router.delete("/:id",(req,res)=> {
+    // if(req.user.user_type === "admin" ){
   try {
     con.query(`DELETE  FROM products WHERE product_id='${req.params.id}'`, (err, result) => {
         if (err) throw err;
@@ -135,9 +135,9 @@ router.delete("/:id",middleware,(req,res)=> {
     console.log(error);
     res.status(400).send(error)
 }
-}else{
-    res.send("Not ALLOWED")
-}
+// }else{
+//     res.send("Not ALLOWED")
+// }
     });
 
 

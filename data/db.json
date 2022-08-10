@@ -1,0 +1,643 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "category": "Games",
+      "title": "Fortnite (FOR ALL CONSOLES)",
+      "image": "https://raw.githubusercontent.com/MudassarKhop/vue-array-testing/main/pictures/New%20folder/fortnite.jpg",
+      "price": "FREE-TO-PLAY",
+      "description": "Fortnite is an online video game developed by Epic Games and released in 2017.",
+      "company": "Epic Games"
+    },
+    {
+      "id": "2",
+      "category": "Games",
+      "title": "Call Of Duty: Warzone (FOR ALL CONSOLES)",
+      "image": "https://raw.githubusercontent.com/MudassarKhop/vue-array-testing/main/pictures/New%20folder/warzone.jpg",
+      "price": "FREE-TO-PLAY",
+      "description": "Call of Duty: Warzone is a free-to-play battle royale video game released on March 10, 2020, for PlayStation 4, Xbox One, and Microsoft Windows.",
+      "company": "Activision"
+    },
+    {
+      "id": "3",
+      "category": "Games",
+      "title": "Apex Legends (FOR ALL CONSOLES)",
+      "image": "https://raw.githubusercontent.com/MudassarKhop/pictures-for-vue/main/New%20folder/538006-apex-legends-xbox-one-front-cover.jpg",
+      "price": "FREE-TO-PLAY",
+      "description": "Apex Legends is a free-to-play battle royale-hero shooter game developed by Respawn Entertainment and published by Electronic Arts. ",
+      "company": "Electronics Art"
+    },
+    {
+      "id": "4",
+      "category": "Games",
+      "title": "PUBG (FOR ALL CONSOLES)",
+      "image": "https://raw.githubusercontent.com/MudassarKhop/vue-array-testing/main/pictures/New%20folder/playerunknowns_battlegrounds_pugb_xbox_one_1.jpg",
+      "price": "FREE-TO-PLAY",
+      "description": "Land on strategic locations, loot weapons and supplies, and survive to become the last team standing across various, diverse Battlegrounds.",
+      "company": "Krafton"
+    },
+    {
+      "id": "5",
+      "category": "Games",
+      "title": "Grand Theft Auto V",
+      "image": "https://raw.githubusercontent.com/MudassarKhop/vue-array-testing/main/pictures/New%20folder/Screenshot%202022-07-08%20121659.jpg",
+      "price": "500",
+      "description": "Grand Theft Auto V is a 2013 action-adventure game developed by Rockstar North and published by Rockstar Games.",
+      "company": "Rockstar"
+    },
+    {
+      "id": "6",
+      "category": "Games",
+      "title": "Pokémon Scarlet and Violet Switch",
+      "image": "https://raw.githubusercontent.com/MudassarKhop/vue-array-testing/main/pictures/New%20folder/Screenshot%202022-07-08%20121944.jpg",
+      "price": "200",
+      "description": "Pokémon Scarlet and Pokémon Violet are upcoming 2022 role-playing video games developed by Game Freak and published by Nintendo and The Pokémon Company for the Nintendo Switch.",
+      "company": "Game Freak"
+    },
+    {
+      "id": "7",
+      "category": "Games",
+      "title": "Diablo III",
+      "image": "https://raw.githubusercontent.com/MudassarKhop/vue-array-testing/main/pictures/New%20folder/diablo.jpg",
+      "price": "250",
+      "description": "Diablo III is a hack-and-slash action role-playing game developed and published by Blizzard Entertainment as the third installment in the Diablo franchise.",
+      "company": "Blizzard Entertainment"
+    },
+    {
+      "id": "8",
+      "category": "Games",
+      "title": "Red Dead Redemption 2",
+      "image": "https://raw.githubusercontent.com/MudassarKhop/pictures-for-vue/main/New%20folder/Screenshot%202022-07-08%20121441.jpg",
+      "price": "350",
+      "description": "Red Dead Redemption 2 is a 2018 action-adventure game developed and published by Rockstar Games. The game is the third entry in the Red Dead series and a prequel to the 2010 game Red Dead Redemption.",
+      "company": "Rockstar Games"
+    },
+    {
+      "id": "9",
+      "category": "Games",
+      "title": "Fifa 22",
+      "image": "https://raw.githubusercontent.com/MudassarKhop/vue-array-testing/main/pictures/New%20folder/fifa-2022-kylian-mbappe-cover-news-info-001.jpg",
+      "price": "899",
+      "description": " FIFA 22 is a football simulation video game published by Electronic Arts. It is the 29th installment in the FIFA series, and was released worldwide on 1 October 2021.",
+      "company": "Electronic Arts"
+    },
+    {
+      "id": "10",
+      "category": "Games",
+      "title": "Forza Horizon 5 Xbox One",
+      "image": "https://raw.githubusercontent.com/MudassarKhop/vue-array-testing/main/pictures/New%20folder/forza.jpg",
+      "price": "899",
+      "description": "Forza is a series of simulation racing games for Xbox consoles, Microsoft Windows, iOS and Android devices published by Xbox Game Studios.",
+      "company": "Microsoft Corporation"
+    },
+    {
+      "id": "11",
+      "category": "Games",
+      "title": "Madden NFL 22",
+      "image": "https://raw.githubusercontent.com/MudassarKhop/vue-array-testing/main/pictures/New%20folder/madden-nfl-22-xbox-one-64213.png",
+      "price": "899",
+      "description": "Madden NFL 22 is an American football video game based on the National Football League, developed by EA Tiburon and published by Electronic Arts.",
+      "company": "Electronic Arts"
+    },
+    {
+      "id": "12",
+      "category": "Games",
+      "title": "Need for Speed™",
+      "image": "https://raw.githubusercontent.com/MudassarKhop/vue-array-testing/main/pictures/New%20folder/need.png",
+      "price": "699",
+      "description": "Need for Speed is a racing video game franchise published by Electronic Arts and currently developed by Criterion Games, the developers of Burnout.",
+      "company": "Electronics Art"
+    },
+    {
+      "id": "13",
+      "category": "Games",
+      "title": "NBA 2K22",
+      "image": "https://raw.githubusercontent.com/MudassarKhop/vue-array-testing/main/pictures/New%20folder/Screenshot%202022-07-08%20120907.jpg",
+      "price": "899",
+      "description": "NBA 2K22 is a 2021 basketball simulation video game developed by Visual Concepts and published by 2K Sports, based on the National Basketball Association.",
+      "company": "2K Gaming"
+    },
+    {
+      "id": "14",
+      "category": "Consoles",
+      "title": "Xbox One S",
+      "image": "https://raw.githubusercontent.com/MudassarKhop/vue-array-testing/main/pictures/New%20folder%20(2)/s-l640.jpg",
+      "price": "6799.99",
+      "description": "Go all digital with the Xbox One S All-Digital Edition and build a library of digital games that travels with you and is available in the cloud.",
+      "company": "Microsoft Corporation"
+    },
+    {
+      "id": "15",
+      "category": "Consoles",
+      "title": "Xbox One",
+      "image": "https://raw.githubusercontent.com/MudassarKhop/vue-array-testing/main/pictures/New%20folder%20(2)/Screenshot%202022-07-08%20134354.jpg",
+      "price": "5499.99",
+      "description": "Announced in May 2013, it is the successor to Xbox 360 and the third base console in the Xbox series of video game consoles. ",
+      "company": "Microsoft Corporation"
+    },
+    {
+      "id": "16",
+      "category": "Consoles",
+      "title": "Nintendo Switch",
+      "image": "https://raw.githubusercontent.com/MudassarKhop/vue-array-testing/main/pictures/New%20folder%20(2)/045496453206_imageoutofpack.png",
+      "price": "3499.00",
+      "description": "Introducing Nintendo Switch, the new home video game system from Nintendo. In addition to providing single and multiplayer thrills at home.",
+      "company": "Nintendo"
+    },
+    {
+      "id": "17",
+      "category": "Consoles",
+      "title": "PlayStation 4 Pro",
+      "image": "https://raw.githubusercontent.com/MudassarKhop/vue-array-testing/main/pictures/New%20folder%20(2)/81l3H5F3I1L._SL1500_.jpg",
+      "price": "7499.00",
+      "description": "PS4 Pro packs in twice the GPU power of the standard PS4 – letting you experience incredible image clarity, smoother gameplay and shorter load times ",
+      "company": "Sony Incorporation"
+    },
+    {
+      "id": "18",
+      "category": "Consoles",
+      "title": "PlayStation 4 Slim",
+      "image": "https://raw.githubusercontent.com/MudassarKhop/vue-array-testing/main/pictures/New%20folder%20(2)/61n-yWHcmSS._AC_SL1500_.jpg",
+      "price": "4599.00",
+      "description": "As a noticeably smaller model, the PS4 Slim is a much better fit for gaming setups with less space on offer.",
+      "company": "Sony Incorporation"
+    },
+    {
+      "id": "19",
+      "category": "Consoles",
+      "title": "PlayStation 5",
+      "image": "https://raw.githubusercontent.com/MudassarKhop/vue-array-testing/main/pictures/New%20folder%20(2)/61d4loPJB9L._SL1500_.jpg",
+      "price": "13000.00",
+      "description": "Experience lightning-fast loading with a high-speed SSD - deeper immersion with support for haptic feedback - adaptive triggers.",
+      "company": "Sony Incorporation"
+    },
+    {
+      "id": "20",
+      "category": "Consoles",
+      "title": "Xbox One X ",
+      "image": "https://raw.githubusercontent.com/MudassarKhop/vue-array-testing/main/pictures/New%20folder%20(2)/610ZPguM7BL._AC_SL1200_.jpg",
+      "price": "13000.00",
+      "description": "The Xbox One X is a powerful step-up console that supports 4K, HDR and offers improved visuals and framerates for certain games",
+      "company": "Microsoft Corporation"
+    },
+    {
+      "id": "21",
+      "category": "Consoles",
+      "title": "Amazon Luna",
+      "description": "Amazon Luna is a cloud gaming platform developed and operated by Amazon. Luna was announced on September 24, 2020, with early access available to subscribers by invitation beginning on October 20, 2020.",
+      "image": "https://raw.githubusercontent.com/MudassarKhop/pictures-for-vue/main/New%20folder%20(2)/51%2BONw8sPnL._AC_SL1000_.jpg",
+      "price": "2999.00",
+      "company": "Amazon"
+    },
+    {
+      "id": "22",
+      "category": "PC Components",
+      "title": "Galax GeForce RTX 3090 Serious Gaming Edition (1-Click OC)",
+      "description": "The all-new GALAX Serious Gaming Edition has equipped with 1-Clip Booster, which can be installed at the back plate and it is the precision and quality that win. When the fan is at the back the PCB is in fact much shorter than the cooler.",
+      "image": "https://raw.githubusercontent.com/MudassarKhop/pictures-for-vue/main/New%20folder%20(3)/81ZxzeX8YBL._SL1500_.jpg",
+      "price": "37990.00",
+      "company": ""
+    },
+    {
+      "id": "23",
+      "category": "PC Components",
+      "title": "MSI GeForce RTX 3090 VENTUS 3X 24G OC 24GB GDDR6X",
+      "description": "The GeForce RTX™ 3090 is a big ferocious GPU (BFGPU) with TITAN class performance. It's powered by Ampere—NVIDIA's 2nd gen RTX architecture—doubling down on ray tracing and AI performance.",
+      "image": "https://raw.githubusercontent.com/MudassarKhop/pictures-for-vue/main/New%20folder%20(3)/81f6GdD799L._SL1500_.jpg",
+      "price": "427990.00",
+      "company": "Msi"
+    },
+    {
+      "id": "24",
+      "category": "PC Components",
+      "title": "Gigabyte GeForce RTX 3090 AORUS XTREME GV-N3090AORUS X-24GD 24GB GDDR6",
+      "description": "NVIDIA Ampere Streaming Multiprocessors, 2nd Generation RT Cores, 3rd Generation Tensor Cores Powered by GeForce RTX™ 3090.",
+      "image": "https://raw.githubusercontent.com/MudassarKhop/pictures-for-vue/main/New%20folder%20(3)/Intel-i7-12th-Gen.jpg",
+      "price": "36000.00",
+      "company": "Gigabyte"
+    },
+    {
+      "id": "25",
+      "category": "PC Components",
+      "title": "Gainward GeForce RTX 3090 Phoenix GW-RTX3090-24GB-PHX 24GB GDDR6X",
+      "description": "The essential companion to your GeForce graphics card. Capture and share videos, screenshots, and livestreams. Keep your drivers up to date and optimize your games.",
+      "image": "https://raw.githubusercontent.com/MudassarKhop/pictures-for-vue/main/New%20folder%20(3)/Screenshot%202022-07-08%20135204.jpg",
+      "price": "52899.99",
+      "company": "Gainward"
+    },
+    {
+      "id": "26",
+      "category": "PC Components",
+      "title": "Phanteks PH-EC400ATG_DBK01 Eclipse P400A Digital RGB Tempered Glass Satin Black Steel ",
+      "description": "Full-Metal Mesh Front Panel, Powder Coated Steel Chassis, Tempered Glass Side Panel, Ultra-Fine Performance Mesh with Uncompromised Airflow, Mid-Tower Form Factor",
+      "image": "https://raw.githubusercontent.com/MudassarKhop/pictures-for-vue/main/New%20folder%20(3)/Screenshot%202022-07-08%20135426.jpg",
+      "price": "1499.00",
+      "company": "Phanteks"
+    },
+    {
+      "id": "27",
+      "category": "PC Components",
+      "title": "G.Skill F4-3200C16D-32GVK Ripjaws V 32GB (2x16GB) DDR4-3200MHz CL16 1.35V Black Desktop Memory",
+      "description": "32GB (2x16GB), DDR4-3200MHz",
+      "image": "https://raw.githubusercontent.com/MudassarKhop/pictures-for-vue/main/New%20folder%20(3)/Screenshot%202022-07-08%20135531.jpg",
+      "price": "2090.00",
+      "company": "G.skills"
+    },
+    {
+      "id": "28",
+      "category": "PC Components",
+      "title": "Asus PRIME B550-PLUS AMD B550 Ryzen Socket AM4 ATX Desktop Motherboard",
+      "description": "AMD AM4 socket: Ready for 3rd Gen AMD Ryzen™ Processors Ultrafast connectivity: Dual M.2, PCIe 4.0, 1 Gb Ethernet, USB 3.2 Gen 2 Type-A and Type-C Comprehensive cooling: VRM heatsinks, PCH heatsink, and Fan Xpert 4",
+      "image": "https://raw.githubusercontent.com/MudassarKhop/pictures-for-vue/main/New%20folder%20(3)/Screenshot%202022-07-08%20135531.jpg",
+      "price": "4699.99",
+      "company": "Asus"
+    },
+    {
+      "id": "29",
+      "category": "PC Components",
+      "title": "Asus 90MB19Z0-M0EAY0 TUF GAMING X570-PRO WIFI II AMD X570 Ryzen Socket AM4 ATX Desktop Motherboard",
+      "description": "AMD AM4 socket: Ready for AMD Ryzen™ 5000 Series, 5000 G-Series, 4000 G-Series, 3000 Series, 3000 G-Series, 2000 G-Series and 2000 Series desktop processors Enhanced power solution: 12+2 DrMOS power stages, six-layer PCB, ProCool sockets, military-grade TUF components and Digi+ VRM for maximum durability",
+      "image": "https://raw.githubusercontent.com/MudassarKhop/pictures-for-vue/main/New%20folder%20(3)/Screenshot%202022-07-08%20140105.jpg",
+      "price": "7899.00",
+      "company": "Asus"
+    },
+    {
+      "id": "30",
+      "category": "PC Components",
+      "title": "Corsair CP-9020221-WW CX650M 650W 80 Plus Bronze Semi Modular Black Desktop Power Supply",
+      "description": "CORSAIR CX-M Series Low-Noise Power Supplies offer 80 PLUS Bronze efficiency and semi-modular cabling for reliable, low-noise operation.",
+      "image": "https://raw.githubusercontent.com/MudassarKhop/pictures-for-vue/main/New%20folder%20(3)/Screenshot%202022-07-08%20140154.jpg",
+      "price": "849.00",
+      "company": "Corsair"
+    },
+    {
+      "id": "31",
+      "category": "PC Components",
+      "title": "Phanteks PH-F140SK_DRGB_PWM SK 140mm D-RGB PWM Black Case Fan",
+      "description": "Full-Metal Mesh Front Panel, Powder Coated Steel Chassis, Tempered Glass Side Panel, Ultra-Fine Performance Mesh with Uncompromised Airflow, Mid-Tower Form Factor",
+      "image": "https://raw.githubusercontent.com/MudassarKhop/pictures-for-vue/main/New%20folder%20(3)/Screenshot%202022-07-08%20140249.jpg",
+      "price": "249.00",
+      "company": "Phanteks"
+    },
+    {
+      "id": "32",
+      "category": "PC Components",
+      "title": "Corsair CW-9060048 iCUE H150i Elite Capellix 360mm Liquid CPU Cooler",
+      "description": "The CORSAIR Hydro Series H100i RGB PLATINUM SE is an all-in-one liquid CPU cooler with a 240mm radiator and vivid RGB lighting",
+      "image": "https://raw.githubusercontent.com/MudassarKhop/pictures-for-vue/main/New%20folder%20(3)/Screenshot%202022-07-08%20140322.jpg",
+      "price": "3599.00",
+      "company": "Corsair"
+    },
+    {
+      "id": "33",
+      "title": "Corsair CW-9060052-WW H55 RGB All-In-One 120mm Liquid CPU Cooler",
+      "description": "The CORSAIR Hydro Series H100i RGB PLATINUM SE is an all-in-one liquid CPU cooler with a 240mm radiator and vivid RGB lighting",
+      "image": "https://raw.githubusercontent.com/MudassarKhop/pictures-for-vue/main/New%20folder%20(3)/Screenshot%202022-07-08%20140428.jpg",
+      "price": "1599.00",
+      "company": "Corsair"
+    },
+    {
+      "id": "34",
+      "title": "AMD 100-100000059WOF Ryzen 9 5950X 16 Core 3.4GHz ",
+      "description": "One processor that can game as well as it creates.",
+      "image": "https://raw.githubusercontent.com/MudassarKhop/pictures-for-vue/main/New%20folder%20(3)/Screenshot%202022-07-08%20140504.jpg",
+      "price": "10990.00",
+      "company": "AMD"
+    },
+    {
+      "id": "35",
+      "category": "PC Components",
+      "title": "AMD 100-100000651WOF Ryzen 7 5800X3D 8-Core 3.4GHz ",
+      "description": "One processor that can game as well as it creates.",
+      "image": "https://raw.githubusercontent.com/MudassarKhop/pictures-for-vue/main/New%20folder%20(3)/Screenshot%202022-07-08%20140539.jpg",
+      "price": "8799.00",
+      "company": "AMD"
+    },
+    {
+      "id": "36",
+      "category": "PC Components",
+      "title": "Intel BX8071512900KF Core i9-12900KF 16 Core 3.2GHz",
+      "description": "3.20 GHz P-Core Base Clock, 5.10 GHz P-Core Max Turbo Clock, 2.40 GHz E-Core Base Clock, 3.90 GHz E-Core Max Turbo Clock",
+      "image": "https://raw.githubusercontent.com/MudassarKhop/pictures-for-vue/main/New%20folder%20(3)/Screenshot%202022-07-08%20140646.jpg",
+      "price": "12599.00",
+      "company": "Intel"
+    },
+    {
+      "id": "37",
+      "category": "PC Components",
+      "title": "Intel BX8071512700K Core i7-12700K 12 Core 3.6GHz",
+      "description": "The Intel Corei7 is available in two- to six-core varieties, and can support up to 12 different threads simultaneously. ",
+      "image": "https://raw.githubusercontent.com/MudassarKhop/pictures-for-vue/main/New%20folder%20(3)/Screenshot%202022-07-08%20140801.jpg",
+      "price": "8700.00",
+      "company": "Intel"
+    },
+    {
+      "id": "38",
+      "category": "PC Components",
+      "title": "Intel BX8071512400 Core i5-12400 Hexa Core 2.50GHz",
+      "description": "The Core i5 processor is available in multiple speeds, ranging from 1.90 GHz up to 3.80 GHz, and it features 3 MB, 4 MB or 6 MB of cache.",
+      "image": "https://raw.githubusercontent.com/MudassarKhop/pictures-for-vue/main/New%20folder%20(3)/Screenshot%202022-07-08%20140902.jpg",
+      "price": "4399.00",
+      "company": "Intel"
+    },
+    {
+      "id": "39",
+      "category": "PC Components",
+      "title": "Intel SSDPE21D960GAM3 Optane 905P 960GB U.2 PCIe NVMe 3.0 Solid State Drive",
+      "description": "960 GB Drive Capacity, Form Factor: U.2 15mm, Interface: PCIe NVMe 3.0 x4, Read Speed: Up to 2600MB/s, Write Speed: Up to 2200MB/s",
+      "image": "https://raw.githubusercontent.com/MudassarKhop/pictures-for-vue/main/New%20folder%20(3)/Screenshot%202022-07-08%20140935.jpg",
+      "price": "27800.00",
+      "company": "Intel"
+    },
+    {
+      "id": "40",
+      "category": "PC Components",
+      "title": "Fractal Design FD-C-POR1A-06 Pop Air RGB Clear Tempered Glass Black Steel ATX Mid Tower Desktop Chassis",
+      "description": "Full-Metal Mesh Front Panel, Powder Coated Steel Chassis, Tempered Glass Side Panel, Ultra-Fine Performance Mesh with Uncompromised Airflow, Mid-Tower Form Factor",
+      "image": "https://raw.githubusercontent.com/MudassarKhop/pictures-for-vue/main/New%20folder%20(3)/Screenshot%202022-07-08%20141035.jpg",
+      "price": "2400.00",
+      "company": "Fractal"
+    },
+    {
+      "id": "41",
+      "category": "PC Components",
+      "title": "G.Skill F4-2800C15Q2-128GRKD Ripjaws 4 128GB (8x16GB)",
+      "description": "32GB (2x16GB), DDR4-3200MHz",
+      "image": "https://raw.githubusercontent.com/MudassarKhop/pictures-for-vue/main/New%20folder%20(3)/Screenshot%202022-07-08%20141121.jpg",
+      "price": "5200.00",
+      "company": "G.skill"
+    },
+    {
+      "id": "42",
+      "category": "PC Components",
+      "title": "Asus ROG STRIX B550-A GAMING AMD B550 Socket AM4 ATX Desktop Motherboard",
+      "description": "Designed for those seeking to get the most out of their build, ROG Strix B550 Gaming series",
+      "image": "https://raw.githubusercontent.com/MudassarKhop/pictures-for-vue/main/New%20folder%20(3)/Screenshot%202022-07-08%20141159.jpg",
+      "price": "6700.00",
+      "company": "Asus"
+    },
+    {
+      "id": "43",
+      "category": "PC Components",
+      "title": "Gigabyte GA-H610M-H-DDR4 H610M H DDR4 Intel H610 Alder Lake LGA1700 Micro-ATX Desktop Motherboard",
+      "description": "Supports 12th Gen Intel® Core™ Series Processors, Dual Channel Non-ECC Unbuffered DDR4, 2 DIMMs, 6+1+1 Hybrid Digital VRM Design",
+      "image": "https://raw.githubusercontent.com/MudassarKhop/pictures-for-vue/main/New%20folder%20(3)/Screenshot%202022-07-08%20141310.jpg",
+      "price": "1500.00",
+      "company": "Gigabyte"
+    },
+    {
+      "id": "44",
+      "category": "PC Components",
+      "title": "Zotac GeForce RTX 3050 Gaming Twin Edge OC ZT-A30500H-10M ​8GB GDDR6 128-bit PCI-E 4.0 Desktop Graphics Card",
+      "description": "Supports 12th Gen Intel® Core™ Series Processors, Dual Channel Non-ECC Unbuffered DDR4,",
+      "image": "https://raw.githubusercontent.com/MudassarKhop/pictures-for-vue/main/New%20folder%20(3)/Screenshot%202022-07-08%20141338.jpg",
+      "price": "5700.00",
+      "company": "Zotac"
+    },
+    {
+      "id": "45",
+      "category": "PC Components",
+      "title": "Palit GeForce RTX 3080",
+      "description": "Supports 12th Gen Intel® Core™ Series Processors, Dual Channel Non-ECC Unbuffered DDR4,",
+      "image": "https://raw.githubusercontent.com/MudassarKhop/pictures-for-vue/main/New%20folder%20(3)/Screenshot%202022-07-08%20141422.jpg",
+      "price": "14990.00",
+      "company": "Palit"
+    },
+    {
+      "id": "46",
+      "category": "PC Components",
+      "title": "Seagate ST2000DM008 Barracuda 2TB",
+      "description": "2TB Storage Capacity, Form Factor: 3.5, Interface: SATA 6 Gb/s",
+      "image": "https://raw.githubusercontent.com/MudassarKhop/pictures-for-vue/main/New%20folder%20(3)/Screenshot%202022-07-08%20141456.jpg",
+      "price": "1900.00",
+      "company": "Seagate"
+    },
+    {
+      "id": "47",
+      "category": "PC Components",
+      "title": "Scythe SCMG-5200 Mugen 5 Rev.C 120mm Black PWM Nickel-Plated Copper Single-Fan Premium High-End CPU Cooler",
+      "description": "Full-Metal Mesh Front Panel, Powder Coated Steel Chassis, Tempered Glass Side Panel, Ultra-Fine Performance Mesh with Uncompromised Airflow, Mid-Tower Form Factor",
+      "image": "https://picsum.photos/seed/picsum/200/300",
+      "price": "849.00",
+      "company": "Scythe"
+    },
+    {
+      "id": "48",
+      "category": "PC Components",
+      "title": "Dell S2721DGFA 27 WQHD (2560x1440) 165Hz 1ms IPS AMD FreeSync Premium Pro DisplayHDR 400 Gaming Desktop Monitor",
+      "description": "27inch QHD gaming monitor with blazing-fast IPS technology, stunning color coverage and tear-free, stutter-free gameplay in a revamped bold design.",
+      "image": "https://picsum.photos/seed/picsum/200/300",
+      "price": "7999.00",
+      "company": "Dell"
+    },
+    {
+      "id": "49",
+      "category": "PC Components",
+      "title": "ASUS VG249Q1R TUF Gaming 23.8",
+      "description": "TUF Gaming VG249Q1R is a 23.8-inch, Full HD (1920x1080) display with an ultrafast 165Hz refresh rate designed for professional gamers",
+      "image": "https://picsum.photos/seed/picsum/200/300",
+      "price": "3599.00",
+      "company": "Asus"
+    },
+    {
+      "id": "50",
+      "category": "Others",
+      "title": "LG 27GN950-B UltraGear 27",
+      "description": "27” fhd (1920 x 1080) ips display ips 1ms (gtg) response time & 144hz refresh rate nvidia g-sync compatible with amd freesync premium",
+      "image": "https://picsum.photos/seed/picsum/200/300",
+      "price": "12000.00",
+      "company": "LG"
+    },
+    {
+      "id": "51",
+      "category": "Others",
+      "title": "Logitech G29 Driving Force Racing Wheel,Floor Pedals,Force Feedback, PS, PC",
+      "description": "Home Accesorios Logitech G29 gaming wheel racing wheel driving You will never want to race with a regular controller again after you add Driving Force to your controller",
+      "image": "https://picsum.photos/seed/picsum/200/300",
+      "price": "2999.00",
+      "company": "Logitech"
+    },
+    {
+      "id": "52",
+      "category": "Others",
+      "title": "Logitech - G29 Driving Force Racing Wheel For PS3/PS4",
+      "description": "Home Accesorios Logitech G29 gaming wheel racing wheel driving You will never want to race with a regular controller again after you add Driving Force to your controller",
+      "image": "https://picsum.photos/seed/picsum/200/300",
+      "price": "5299.00",
+      "company": "Logitech"
+    },
+    {
+      "id": "53",
+      "category": "Others",
+      "title": "RED Edition Recliner design GAMING chair with foot rest",
+      "description": "Reclining gaming chair with massage function, requires 10 AA batteries",
+      "image": "https://picsum.photos/seed/picsum/200/300",
+      "price": "2100.00",
+      "company": "RED EDITION"
+    },
+    {
+      "id": "54",
+      "category": "Others",
+      "title": "Playseat Forza Motorsport PRO",
+      "description": "Official Forza Motorsport Simulator, Quality leather look vinyl Upholstery Durable, Black Coated, adjustable frame",
+      "image": "https://picsum.photos/seed/picsum/200/300",
+      "price": "10200.00",
+      "company": "Forza"
+    },
+    {
+      "id": "55",
+      "category": "Others",
+      "title": "Razer Kraken Green Gaming Headset",
+      "description": " Ear cushions filled with cold gel, Unidirectional retractable microphone, Bauxite aluminum frame, Thicker padding •",
+      "image": "https://picsum.photos/seed/picsum/200/300",
+      "price": "2910.00",
+      "company": "Razer"
+    },
+    {
+      "id": "56",
+      "category": "Others",
+      "title": "Razer Goliathus Chroma Gaming Mat",
+      "description": "Our bestselling soft gaming mouse mat is now Powered by Razer Chroma —ready to illuminate every victory in a stunning spectrum of colors. .",
+      "image": "https://picsum.photos/seed/picsum/200/300",
+      "price": "999.00",
+      "company": "Razer"
+    },
+    {
+      "id": "57",
+      "category": "Others",
+      "title": "Razer Cynosa V2 Gaming Keyboard",
+      "description": "Paint your play in a truly immersive light with the Razer Cynosa V2 - the essential RGB gaming keyboard. ",
+      "image": "https://picsum.photos/seed/picsum/200/300",
+      "price": "1499.00",
+      "company": "Razer"
+    },
+    {
+      "id": "58",
+      "category": "Others",
+      "title": "Razer Basilisk Ultimate Gaming Mouse",
+      "description": "Execute advanced macros and functions seamlessly with a wireless gaming mouse that boasts 11 programmable buttons.",
+      "image": "https://picsum.photos/seed/picsum/200/300",
+      "price": "2399.00",
+      "company": "Razer"
+    },
+    {
+      "id": "59",
+      "category": "Others",
+      "title": "Hexagonal Touch LED Room Light Modular Touch Sensitive",
+      "description": "Touch sensitive mood lighting for your gaming set-up",
+      "image": "https://picsum.photos/seed/picsum/200/300",
+      "price": "989.00",
+      "company": "Logitech"
+    },
+    {
+      "id": "60",
+      "category": "Others",
+      "title": "Redragon Anvil RGB Stereo Gaming Speakers",
+      "description": "Redragon Series Anvil Model RD-GS520 Frequency 160Hz - 20,000Hz Speakers 2x 3W RMS Signal to Noise Ratio (SNR) >60dB",
+      "image": "https://picsum.photos/seed/picsum/200/300",
+      "price": "449.00  ",
+      "company": "Redragon"
+    },
+    {
+      "id": "61",
+      "category": "Others",
+      "title": "I47 Polygon Leg Gaming Desk",
+      "description": "Upgrade Your Gaming Gear! Eureka I47 Polygon Leg Gaming Desk. Enhanced Spaciousness and Durability with the Classic I-Shaped Design. ",
+      "image": "https://picsum.photos/seed/picsum/200/300",
+      "price": "3799.00",
+      "company": "Eureka Gaming"
+    },
+    {
+      "id": "65",
+      "category": "Others",
+      "title": "Gamdias Hermes E3 RGB Mechanical Gaming Keyboard - White / Blue Switches",
+      "description": "Features 50 million lifecycle, 16.8 million colors with 19 Lighting Effects, Built-n Memory of 32KB. Compact in size and easily portable form factor.",
+      "image": "https://picsum.photos/seed/picsum/200/300",
+      "price": "699.00",
+      "company": "Gamdias"
+    },
+    {
+      "id": "66",
+      "category": "Others",
+      "title": "Everki ONYX EKP132 15.6 Travel Friendly Laptop Backpack",
+      "description": "perfect for the traveling executive Every detail of the Onyx has been designed with the traveling executive in mind. Its top-of-the-line materials, premium features ",
+      "image": "https://picsum.photos/seed/picsum/200/300",
+      "price": "3799.00",
+      "company": "Everki"
+    },
+    {
+      "id": "68",
+      "category": "Others",
+      "title": "Evetech SCOUT 17.3 Laptop Backpack / Multiple Compartments, Easy Storage",
+      "description": "Evetech SCOUT 17.3 Laptop Backpack / Multiple Compartments, Easy Storage / Strong Carry Handles For Easy Grip / Flexible Padding For Protection / EV-008",
+      "image": "https://picsum.photos/seed/picsum/200/300",
+      "price": "1300.00",
+      "company": "Evetech"
+    }
+  ],
+  "users": [
+    {
+      "id_user": "1",
+      "full_name": "Jesse Spencer",
+      "password": "password",
+      "email": "jesse@gmail.com"
+    },
+    {
+      "id": "2",
+      "full_name": "Le-andre Moritz",
+      "password": "password",
+      "email": "le@gmail.com"
+    },
+    {
+      "id": "3",
+      "full_name": "Ashton Abrahams",
+      "password": "Brotherhood",
+      "email": "ashton@gmail.com"
+    },
+    {
+      "id": "4",
+      "full_name": "Muda",
+      "password": "password",
+      "email": "Muda@gmail.com"
+    },
+    {
+      "full_name": "Jodie",
+      "email": "jodie@gmail.com",
+      "password": "password",
+      "id": "_QVcEZn"
+    },
+    {
+      "full_name": "Mika",
+      "email": "mika@gmail.com",
+      "password": "password",
+      "id": "Ta4aNro"
+    },
+    {
+      "full_name": "Chanique",
+      "email": "chanique@gmail.com",
+      "password": "password",
+      "id": "TXxJhlS"
+    },
+    {
+      "full_name": "oslin",
+      "role": "",
+      "email": "oslin@gmail.com",
+      "password": "password",
+      "id": "HzQgsvI"
+    },
+    {
+      "full_name": "virgin",
+      "role": "",
+      "email": "virgin@gmail.com",
+      "password": "password",
+      "id": "xBReJSk"
+    },
+    {
+      "full_name": "Jodi",
+      "role": "",
+      "email": "jodi@icloud.com",
+      "password": "password",
+      "id": "0HRKq5b"
+    }
+  ]
+}

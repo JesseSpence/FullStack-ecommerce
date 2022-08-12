@@ -206,9 +206,9 @@ window.onload = function() {
 }
 #productbody{
 	height:fit-content;
-	width:15vw;
-	margin: 5% 0 0 27.5%;
-	overflow: scroll;
+	width:20vw;
+	margin: 5% 0 0 22%;
+	overflow: clip;
   background-color: black;
 	display:flex;
 
@@ -217,9 +217,16 @@ p{
   font-size: 15px;
 }
 .products{
+ animation: move 25s linear infinite;
 	margin-right: 10%;
 	color:silver;
 	width: 450px;
+}
+
+@keyframes move{
+  0%{transform: translateX(0px);}
+  50%{transform: translateX(-950px);}
+  100%{transform: translateX(-1850px);}
 }
 
 #productbody::-webkit-scrollbar-track {
@@ -252,22 +259,22 @@ p{
   transition: all ease-in-out 1s;
   filter: drop-shadow(10px 2px 10px rgba(0, 0, 0, 0.7));
   transform:rotate(250deg);
-  right:-2%;
-  top:400px;
+  right:-3%;
+  top:370px;
 }
 
 #plant{
   position:absolute;
  height:800px;
  top:-10%;
- right:-10%;  padding:1%;
+ right:-8%;  padding:1%;
   filter: drop-shadow(5px 0 0 rgba(0, 0, 0, 0.7));
 }
 div.middle{
   height:fit-content;
   width:80vw;
-  margin-top:8%;
-  margin-left:-8%;
+  margin-top:3%;
+  margin-left:-10%;
   text-align:center;
 }
 .home-text{
@@ -288,14 +295,15 @@ div.middle{
 	text-decoration: none !important;
 	background:rgba(246, 203, 94, 0.755);
 	padding:1%;
-	color:black;
+  color:silver;
+	background:rgb(0, 0, 0);
 	font-size: 1.2rem;
+	border:solid 2px rgba(246, 203, 94, 0.755);
 	border-radius: 20px;
 }
 .shop:hover{
-	color:silver;
-	border:solid 2px rgba(246, 203, 94, 0.755);
-	background:rgb(0, 0, 0);
+	color:black;
+  background:rgba(246, 203, 94, 0.755);
 }
 .shop:focus{
 	font-size: small;

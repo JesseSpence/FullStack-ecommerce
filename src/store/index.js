@@ -46,6 +46,11 @@ export default createStore({
 		product: null,
 		asc: true,
 	},
+	getters:{
+		GetProducts(){
+		  state.products
+		}
+	  },
 	mutations: {
 		setUser: (state, user) => {
 			state.user = user;
@@ -90,22 +95,30 @@ export default createStore({
 	actions: {
 		login: async (context, payload) => {
 			const { email, password } = payload;
-			const response = await fetch(
-				`http://localhost:3000/users?email=${email}&password=${password}`
-			);
+			const response = await fetch("http://localhost:6969/users/login",{
+					method:"POST",
+					body:JSON.stringify({
+						email:email,
+						password:password
+					}),  
+					headers: {
+						'Content-type': 'application/json',
+					  },
+						});
 			const userData = await response.json();
 			context.commit("setUser", userData[0]);
 		},
 		ShowProducts: async (context) => {
-			fetch("http://localhost:3000/products")
-				.then((response) => response.json())
-				.then((products) => context.commit("setProducts", products));
+			const res = await fetch("https://classic-store.herokuapp.com/products", { mode: "cors" })
+				.then(res => res.json())
+				.then(data => context.commit("setProducts", data));
+			console.log(res);
 		},
 
 		// create user
 		signUp: async (context, data) => {
 			const { full_name, email, password, role } = data;
-			fetch("http://localhost:3000/users", {
+			fetch("http://localhost:6969/users", {
 				method: "POST",
 				body: JSON.stringify({
 					full_name: full_name,
@@ -123,36 +136,43 @@ export default createStore({
 
 		// open one card
 		showProduct: async (context) => {
-			fetch("http://localhost:3000/products" + id)
+			fetch("https://classic-store.herokuapp.com/products" + id)
 				.then((res) => res.json())
 				.then((products) => context.commit("setProducts", products));
 		},
 
+
 		// create a product
-		createProduct: async (context, payload) => {
-			const { artistName, artName, price, imgURL, description, category } =
-				payload;
-			fetch("http://localhost:3000/products", {
+		AddProduct: async (context,product) => {
+			// const { name,price, descriptions, category,weight,sku,thumbnail,image,create_date,stock } =
+			// 	payload;
+					 fetch("http://localhost:6969/products", {
 				method: "POST",
 				body: JSON.stringify({
-					artistName: artistName,
-					artName: artName,
-					price: price,
-					imgURL: imgURL,
-					description: description,
-					category: category,
+					sku:product.sku,
+					name:product.name,
+					price: product.price,
+					weight:product.weight,
+					descriptions:product.descriptions,
+					thumbnail:product.thumbnail,
+					image:product.image,
+					category:product.category,
+					create_date:product.create_date,  
+					stock:product.stock
 				}),
 				headers: {
 					"Content-type": "application/json; charset=UTF-8",
 				},
 			})
 				.then((response) => response.json())
-				.then(() => context.dispatch("ShowProducts"));
+				.then((data) =>
+				context.commit("setProducts",data)
+				);
 		},
 
 		// edit products
-		updateProduct: async (context, product) => {
-			fetch("http://localhost:3000/products" + piece.id, {
+		updateProduct: async (context, product,id) => {
+			fetch(`http://localhost:6969/products/:${id}`, {
 				method: "PUT",
 				body: JSON.stringify(product),
 				headers: {
@@ -160,7 +180,7 @@ export default createStore({
 				},
 			})
 				.then((response) => response.json())
-				.then(() => context.dispatch("ShowProducts"));
+				.then(() => context.dispatch("setProducts"));
 		},
 
 		// delete

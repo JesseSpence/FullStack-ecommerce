@@ -1,4 +1,4 @@
-<!-- <template>
+<template>
   <div class="flex">
     <div id="body" v-for="product of product" :key="product.id">
       <div class="everything">
@@ -20,7 +20,9 @@
 <script>
 import Product from "@/components/Product.vue";
 export default {
-  components: { Card },
+  components: {
+    Card,
+    Product},
   mounted() {
     this.$store.dispatch("ShowProducts");
   },
@@ -133,4 +135,4 @@ option {
 
 
 
-</style> -->
+</style>

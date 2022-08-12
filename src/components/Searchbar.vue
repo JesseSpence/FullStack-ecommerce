@@ -1,10 +1,10 @@
 <template>
-	<button @click="toggleBar"><i class="fa-solid fa-magnifying-glass"></i></button>
+	<button @click="toggleBar"><router-link to="/ProductView"><i class="fa-solid fa-magnifying-glass"></i></router-link></button>
 	<div v-if="active" id="searchInput">
 		<input v-model="search" type="text" placeholder="Looking for something..."/>	
 	</div>
 </template>
-<script>
+<script> 
 	export default {
 		props: [],
 		data() {
@@ -33,6 +33,7 @@
 		padding:5px;
 		z-index: 100;
 	}
+	a{color:black}
     .fa-solid{
 		font-size:1.5rem;
 	}
@@ -41,7 +42,7 @@
 		font-size:1.5rem;
 		transition: all ease-in-out .2s;
 	   margin-right:2% ;
-	   color:rgba(0, 0, 0, 0.634);
+	   color:rgba(0, 0, 0, 0.634) !important;
 		background: none ;
 	}
 	button:hover{

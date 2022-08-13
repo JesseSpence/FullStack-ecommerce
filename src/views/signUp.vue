@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
 	<div class="signUpPage">
 		<form @submit.prevent="signUp">
 			<div class="login-box">
@@ -31,7 +31,7 @@
 	</div>
 </template>
 
-<!-- <script>
+<script>
 	export default {
 		data() {
 			return {
@@ -339,3 +339,61 @@
 		text-shadow: 3px 3px 15px black;
 	}
 </style> -->
+
+
+
+<template >
+ <form @submit.prevent="signUp()">
+	 <div>
+		<input type="email" name="email" id="email" v-model="email" placeholder="email">
+		{{email}}
+		<input type="text" name="password" id="password" v-model="password" placeholder="password">
+		{{password}}
+		<input type="text" name="Full_Name" id="Full_Name" v-model="full_name" placeholder="Full Name">
+	      {{full_name}}
+    	<input type="text" name="country" id="country" v-model="country" placeholder="Country">
+		{{country}}
+		<input type="number" name="phone" id="phone" v-model="phone" placeholder="Phone">
+		{{phone}}
+	 </div>
+	 <button type="submit">Register</button>
+   
+ </form>
+</template>
+<script>
+export default {
+	data(){
+		return {
+			data:{
+				email:"",
+				password:"",
+				full_name:"",
+				country:"",
+				phone:""
+			}
+		}
+	},
+	methods:{
+		signUp(){
+			this.$store.dispatch("signUp", {
+				email:this.email,
+				password:this.password,
+				full_name:this.full_name,
+				country:this.country,
+				phone:this.phone
+			});
+		},
+	},
+};
+</script>
+<style scoped>
+
+div{
+	display: flex;
+	flex-direction: column;
+}
+input{
+	width: 10vw;
+	margin:auto;
+}
+</style>

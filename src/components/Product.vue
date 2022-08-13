@@ -134,3 +134,29 @@ option {
 
 
 </style> -->
+
+
+
+
+
+<template>
+    <div>
+      <h1>{{product.name}}</h1>
+      <img :src="product.image" :alt="product.product_id">
+
+
+        <router-link :to="{name:'ProductOne', params:{id:product.product_id}}" product="product" >
+      <button>View</button>
+  </router-link>
+    </div>
+</template>
+<script>
+export default {
+  props:['product'],
+
+  
+}
+</script>
+<style lang="">
+  
+</style>

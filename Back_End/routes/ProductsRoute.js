@@ -128,7 +128,7 @@ router.delete("/:id",(req,res)=> {
     // if(req.user.user_type === "admin" ){
   try {
     con.query(`DELETE  FROM products WHERE product_id='${req.params.id}'`, (err, result) => {
-        if (err) throw err;
+        if (err) throw err.message;
         res.send(result);
     });
 } catch (error) {

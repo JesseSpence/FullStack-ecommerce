@@ -1,47 +1,35 @@
-<!-- <template>
-	<button @click="toggleModal">Edit</button>
-	<div v-if="active" class="mod">
-		<form>
-			<div>TITLE</div>
-			<input type="text" v-model="product.title" />
-			<div>CATEGORY</div>
-			<input type="text" v-model="product.category" />
-			<div>COMPANY</div>
-			<input type="text" v-model="product.company" />
-			<div>PRICE</div>
-			<input type="text" v-model="product.price" />
-		</form>
-	</div>
-</template>
-<script>
-	export default {
-		props: ["product"],
-		data() {
-			return {
-				active: false,
-			};
-		},
-		methods: {
-			toggleModal() {
-				this.active = !this.active;
-			},
-		},
-		mounted() {
-			console.log(this.product);
-		},
-	};
-</script>
-<style scoped>
-	.mod {
-	
-	}
-</style> -->
+<template>
+<router-link to="/ProductView"><button>Backx``</button></router-link>
+<div v-if="product"></div>
+   
+<div v-for="item in product" :key="item.product_id" >
+
+<h2>{{item.name}}</h2>
+<div>
+    <img :src="item.image" :alt="item.name">
+</div>
+<p>{{item.descriptions}}</p>
+</div>
+ <div v-if="user">
+<button @click="deleteProduct(product.product_id)">DEL</button>
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#item">
+ Update
+</button>
+</div>
+
+<!-- Button trigger modal -->
 
 
-<template >
-<button @click="ToggleMav()">Update</button>
-<div v-if="active" class="modal">
-
+<!-- Modal -->
+<div class="modal fade" id="item" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        
 	    <form @submit.prevent="Updateproduct()">
      <input type="text" name="Product_name" id="name" v-model="product.sku" placeholder="sku">
     {{product.sku}}
@@ -65,12 +53,22 @@
     {{product.category}}
     <button type="submit">Update</button>
     </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
 </div>
+
+    
 </template>
 <script>
+
 export default {
-	props:[ 'product'],
-	    data(){
+     props:["product_id"],
+    	    data(){
         return{
 
             product:{
@@ -88,20 +86,30 @@ export default {
             },
 			active:false
         }
-    },methods: {
-		UpdateProduct(){
-			return this.$store.dispatch("Updateproduct",this.product)
-		},
-		ToggleMav(){
-          this.active = !this.active
-		}
-	},
-	
-}
-</script>
-<style >
-	/* .modal{
-     	
+            },
+   
+    mounted(){
+        this.$store.dispatch("getProduct",this.$route.params.id);
+        
+    },
 
-	} */
+    computed:{
+        product(){
+          return  this.$store.state.product
+        }
+    },	methods: {
+		deleteProduct(id){
+				return this.$store.dispatch("deleteProduct",id)
+			},
+			Modal(id){
+				this.modal=true;
+
+			}
+		},
+        	
+}
+
+</script>
+<style lang="">
+    
 </style>

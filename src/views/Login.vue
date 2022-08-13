@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
 	<div class="loginPage">
 		<form @submit.prevent="login">
 			<div class="log">
@@ -23,7 +23,7 @@
 		</form>
 	</div>
 </template>
-<!-- <script>
+<script>
 	export default {
 		computed: {
 			user() {
@@ -328,4 +328,63 @@
 		color: white;
 		text-shadow: 3px 3px 15px black;
 	}
-</style> -->
+</style> --> -->
+
+
+<template >
+<form @submit.prevent="Login()" >
+	<div>
+		<input type="email" id="email" name="email" placeholder="Email" v-model="email">
+		{{email}}
+		<input type="password" id="password" name="password" placeholder="Password" v-model="password">
+		{{password}}
+	</div>
+		<button type="submit">Login</button>
+		<div v-if="token">
+		<router-link to="/ProductView"></router-link>
+         <button @click="Verify()"> browse</button>
+		</div>
+</form>
+		
+</template>
+<script>
+
+
+export default {
+	data(){
+    return {
+	
+			email:"",
+			password:""
+
+	}
+	},
+	// mounted(){
+	// 	this.$store.dispatch("Login")
+	// },
+	computed:{
+		user(){
+			return this.$store.state.user
+		},
+		token(){
+			return this.$store.state.token
+		}
+	},
+	methods:{
+		Login(){
+			return 	this.$store.dispatch("login",{
+				email:this.email,
+				password:this.password
+			})
+		
+		},
+		Verify (){
+          return this.$store.dispatch("verify",this.token)
+		}
+	}
+	
+}
+</script>
+<style >
+	
+</style>

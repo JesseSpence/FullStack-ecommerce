@@ -39,10 +39,9 @@
 
 
 <template >
-<button @click="ToggleMav()">Update</button>
+<button @click="ToggleMav(product.product_id)">Update</button>
 <div v-if="active" class="modal">
-
-	    <form @submit.prevent="Updateproduct()">
+	    <form @submit.prevent="Updateproduct(product.product_id)">
      <input type="text" name="Product_name" id="name" v-model="product.sku" placeholder="sku">
     {{product.sku}}
      <input type="text" name="Product_name" id="name" v-model="product.weight" placeholder="weight">
@@ -89,8 +88,8 @@ export default {
 			active:false
         }
     },methods: {
-		UpdateProduct(){
-			return this.$store.dispatch("Updateproduct",this.product)
+		UpdateProduct(id){
+			return this.$store.dispatch("Updateproduct",this.product,id)
 		},
 		ToggleMav(){
           this.active = !this.active

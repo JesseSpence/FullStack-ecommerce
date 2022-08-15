@@ -369,7 +369,8 @@ export default {
 				password:"",
 				full_name:"",
 				country:"",
-				phone:""
+				phone:"",
+				user_type:"user"
 			}
 		}
 	},
@@ -380,7 +381,8 @@ export default {
 				password:this.password,
 				full_name:this.full_name,
 				country:this.country,
-				phone:this.phone
+				phone:this.phone,
+				user_type:this.user_type
 			});
 		},
 	},

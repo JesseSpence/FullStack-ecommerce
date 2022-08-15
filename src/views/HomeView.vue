@@ -18,16 +18,7 @@
 		  </div>
  </div>
 
- <div id="box">
-
-<img id= "plant" src="https://i.ibb.co/vz20HJf/5277509-removebg-preview.png"> 
-		
-<img id="watch"
-     src="https://i.ibb.co/SKmV0FQ/gold-roly-removebg-preview.png">
-  
-  <img id= "man" src="https://i.ibb.co/3f3Xz3s/grigore-ricky-TVUUz6b-MFSQ-unsplash-removebg-preview.png">
-    
-</div>
+<DecorationBox/>
 
  
  </section>
@@ -43,9 +34,13 @@
 	
 	</div>
   </div> 
+  <Contact/>
 </template>
 
 <script>
+
+import Contact from "../components/Contact.vue"
+import DecorationBox from "../components/decorationBox.vue";
 export default {
   data() {
     return {
@@ -134,7 +129,10 @@ export default {
       ]
     };
   },
-
+  components: {
+    Contact,
+    DecorationBox
+},
   methods: {
 		homeText() {
 			this.$store.commit("hometext");
@@ -198,21 +196,41 @@ window.onload = function() {
 }</script>
 
 <style scoped>
-#box{
-  z-index: -1;
+ul{
+  margin:0;
+  padding:0;
 }
+
 #home{
   display:flex;
 }
 #productbody{
 	height:fit-content;
 	width:20vw;
-	margin: 5% 0 0 22%;
+	margin: 8% 0 10% 22%;
 	overflow: clip;
-  background-color: black;
+  background-color: var(--background-color);
 	display:flex;
-
 }
+/* #productbody::before{
+  content:"";
+  position:absolute;
+  margin-top:-2%;
+  left:0;
+  width:100vw;
+  height:2px;
+  background-color:rgba(192, 192, 192, 0.129);
+  z-index: -100;
+}
+#productbody::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-11%;
+  width:100vw;
+  height:2px;
+  background-color:rgba(192, 192, 192, 0.129);
+} */
 p{
   font-size: 15px;
 }
@@ -243,38 +261,11 @@ p{
   background: -webkit-linear-gradient( rgb(0, 0, 0)50%, rgb(227, 227, 112));
 }
 
-#man{
-  position:absolute;
-	right:0;
-	top:100px;
-  filter: drop-shadow(5px 2px 1px rgba(0, 0, 0, 0.458));
-  transition: all ease-in-out .5s;
-}
-#man:hover{
-  transform: scale(1.1) translateY(-20px) rotate(3deg);
-}
-#watch{
-  position:absolute;
-  height:350px;
-  transition: all ease-in-out 1s;
-  filter: drop-shadow(10px 2px 10px rgba(0, 0, 0, 0.7));
-  transform:rotate(250deg);
-  right:-3%;
-  top:370px;
-}
-
-#plant{
-  position:absolute;
- height:800px;
- top:-10%;
- right:-8%;  padding:1%;
-  filter: drop-shadow(5px 0 0 rgba(0, 0, 0, 0.7));
-}
-div.middle{
+.middle{
   height:fit-content;
   width:80vw;
   margin-top:3%;
-  margin-left:-10%;
+  margin-right: 36%;
   text-align:center;
 }
 .home-text{
@@ -296,7 +287,7 @@ div.middle{
 	background:rgba(246, 203, 94, 0.755);
 	padding:1%;
   color:silver;
-	background:rgb(0, 0, 0);
+	background:var(--background-color);
 	font-size: 1.2rem;
 	border:solid 2px rgba(246, 203, 94, 0.755);
 	border-radius: 20px;
@@ -332,7 +323,6 @@ div.middle{
 
 .mask > div {
   width: 20px;
-
   overflow: hidden;
   transform: skewX(-30deg);
 }
@@ -358,5 +348,65 @@ div.middle{
   0% { transform: translateX(30px); }
   50% { transform: translateX(-110%); }
   100% { transform: translateX(-110%); }
+}
+
+@media screen and (max-width:850px) {
+
+.middle{
+  transform: scale(0.8);
+}
+#productbody::after, #productbody::before{display:none}
+}
+@media screen and (max-width:662px) {
+    .middle{
+  transform: scale(0.6);
+  margin:0 0% 0 -9% ;
+}
+#productbody{
+  margin: 5% 0 5% 32%;
+  width:40vw;
+}
+.txt-rotate{
+	margin-left:55%;
+}
+.shop{
+  margin-left:60%;
+}
+}
+@media screen and (max-width:495px) {
+  .home-text{
+    transform:scale(0.8)
+  }
+  .txt-rotate{
+	margin-left:65%;
+}
+ .middle{
+	margin-left:-10%;
+}
+.shop{
+  margin-left:75%;
+}
+}
+@media screen and (max-width:420px) {
+h2{
+  margin-left:-13%;
+}
+}
+@media screen and (max-width:406px) {
+.home-text{
+  transform: scale(0.7);
+}
+}
+
+
+@media screen and (max-width:360px) {
+.home-text{
+  margin-left:-10%;
+}
+}
+@media screen and (max-width:330px) {
+.home-text{
+  transform: scale(0.5);
+}
 }
 </style>

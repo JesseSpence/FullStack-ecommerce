@@ -1,4 +1,6 @@
+import router from "@/router";
 import { createStore } from "vuex";
+
 var TxtRotate = function(el, toRotate, period) {
 	this.toRotate = toRotate;
 	this.el = el;
@@ -42,9 +44,11 @@ var TxtRotate = function(el, toRotate, period) {
 export default createStore({
 	state: {
 		user: null,
+		token:null,
 		products: null,
 		product: null,
-		asc: true,
+		orders:[],
+	
 	},
 	getters:{
 		GetProducts(){
@@ -52,9 +56,12 @@ export default createStore({
 		}
 	  },
 	mutations: {
+		setToken:(state,token)=>{
+            state.token = token
+		},
+
 		setUser: (state, user) => {
 			state.user = user;
-			asc = true;
 		},
 
 		setProduct: (state, product) => {
@@ -63,6 +70,9 @@ export default createStore({
 		setProducts: (state, products) => {
 			state.products = products;
 		},
+		setOrders(state,orders){
+			state.orders = orders
+		  },
 
 		sortProductsByPrice: (state) => {
 			state.products = state.products.sort((a, b) => {
@@ -93,60 +103,99 @@ export default createStore({
 	},
 
 	actions: {
-		login: async (context, payload) => {
-			const { email, password } = payload;
-			const response = await fetch("http://localhost:6969/users/login",{
-					method:"POST",
-					body:JSON.stringify({
-						email:email,
-						password:password
-					}),  
-					headers: {
-						'Content-type': 'application/json',
-					  },
-						});
-			const userData = await response.json();
-			context.commit("setUser", userData[0]);
+		GetUser: async (context,state)=> {
+			const res = await fetch("https://classic-store.herokuapp.com/users" + state.user.user_id)
+				.then(res => res.json())
+				.then(data => {
+				context.commit("setUser",data)
+				})
+			console.log(res);
 		},
 		ShowProducts: async (context) => {
-			const res = await fetch("https://classic-store.herokuapp.com/products", { mode: "cors" })
-				.then(res => res.json())
-				.then(data => context.commit("setProducts", data));
-			console.log(res);
+			const res =	await fetch("https://classic-store.herokuapp.com/products")
+			.then(res => res.json())
+			.then(data => context.commit("setProducts",data) );	
+		},
+		login: async (context,payload) => {
+			 const {email,password} = payload
+			const response = await fetch("https://classic-store.herokuapp.com/users/login",{
+	    	method:"POST",
+			body:JSON.stringify({
+			email:payload.email,
+			password:payload.password
+			}),  
+			headers: {
+			'Content-type': 'application/json',
+		    },
+			})
+			.then(res => res.json())
+			.then(data =>{
+				context.commit("setToken",data), 
+				console.log(data)
+			})
+			
+		},
+		
+	verify: async (context, state)=>{
+       const res = await fetch("https://classic-store.herokuapp.com/users/users/verify",{
+		method:"GET",
+			headers: {
+			'Content-type': 'application/json',
+			'x-auth-token': `${state.token}`
+		    },
+	   })
+	   .then(res => res.json())
+	   .then(data =>{
+        context.commit('setUser',data.user),
+		console.log(data.user);
+	   })
+	//    router.push({
+	// 	name: 'ProductView'
+	//    })
 		},
 
 		// create user
-		signUp: async (context, data) => {
-			const { full_name, email, password, role } = data;
-			fetch("http://localhost:6969/users", {
+		signUp: async (context, payload) => {
+			// const { full_name, email, password, phone,country } = payload;
+			console.log( payload);
+			const res = await fetch("https://classic-store.herokuapp.com/users/register", {
+				mode:"no-cors",
+				
 				method: "POST",
-				body: JSON.stringify({
-					full_name: full_name,
-					role: role,
-					email: email,
-					password: password,
+				body:JSON.stringify({
+					full_name: payload.full_name,
+                    email: payload.email,
+					billing_address: "Address",
+					default_shipping_address:"ALl no",
+                    password: payload.password,
+                    phone: payload.phone,
+                    country: payload.country
 				}),
 				headers: {
-					"Content-type": "application/json; charset=UTF-8",
-				},
+					"Content-type": "application/json;",
+				}
 			})
-				.then((response) => response.json())
-				.then((json) => context.commit("setUser", json));
+			.then((res) => res.json())
+			.then((data) => {
+
+					console.log(data);
+				});
+				console.log(res);
 		},
 
 		// open one card
-		showProduct: async (context) => {
-			fetch("https://classic-store.herokuapp.com/products" + id)
+		getProduct: async (context,id) => {
+			fetch("https://classic-store.herokuapp.com/products/" + id)
 				.then((res) => res.json())
-				.then((products) => context.commit("setProducts", products));
+				.then((product) => context.commit("setProduct", product));
 		},
-
 
 		// create a product
 		AddProduct: async (context,product) => {
 			// const { name,price, descriptions, category,weight,sku,thumbnail,image,create_date,stock } =
 			// 	payload;
-					 fetch("http://localhost:6969/products", {
+					 const response = await fetch("https://classic-store.herokuapp.com/products", {
+						mode:"no-cors",
 				method: "POST",
 				body: JSON.stringify({
 					sku:product.sku,
@@ -164,32 +213,71 @@ export default createStore({
 					"Content-type": "application/json; charset=UTF-8",
 				},
 			})
-				.then((response) => response.json())
+				.then((res) => res.json())
 				.then((data) =>
 				context.commit("setProducts",data)
 				);
+				console.log(response);
 		},
 
 		// edit products
-		updateProduct: async (context, product,id) => {
-			fetch(`http://localhost:6969/products/:${id}`, {
-				method: "PUT",
-				body: JSON.stringify(product),
+		UpdateProduct: async (context, product,id) => {
+			const response = await fetch('https://classic-store.herokuapp.com/products' + id, {
+				method: "PATCH",
+				body: JSON.stringify({
+					sku:product.sku,
+					name:product.name,
+					price: product.price,
+					weight:product.weight,
+					descriptions:product.descriptions,
+					thumbnail:product.thumbnail,
+					image:product.image,
+					category:product.category,
+					create_date:product.create_date,  
+					stock:product.stock
+				}),
 				headers: {
 					"Content-type": "application/json; charset=UTF-8",
 				},
 			})
 				.then((response) => response.json())
-				.then(() => context.dispatch("setProducts"));
+				.then(() => context.dispatch("setProducts",product));
+				console.log(response);
 		},
 
 		// delete
 		deleteProduct: async (context, id) => {
-			fetch("http://localhost:3000/products/" + id, {
+			const res = await fetch('https://classic-store.herokuapp.com/products' +  id, {
 				method: "DELETE",
+				headers: {
+					"Content-type": "application/json; charset=UTF-8",
+				},
 			})
 				.then((response) => response.json())
 				.then(() => context.dispatch("ShowProducts"));
+			console.log(res);
 		},
+		addToPackage: async (context,order) => {
+			const res = await fetch("http://classic-store.herokuapp.com",{
+             method:"POST",
+			 body:JSON.stringify({
+				product:order.product,
+			   quantity:order.quantity
+			 }),
+			 headers:{
+				"Content-type": "application/json; charset=UTF-8",
+			 }
+			})
+			const data = res.json();
+			console.log(data);
+		},
+		getPackage:async (context)=>{
+			const res = await fetch("https://classic-store.herokuapp.com/users/" + id,{
+				method:"GET"
+			});
+			const data = res.json();
+			console.log();
+		}
+
 	},
 });

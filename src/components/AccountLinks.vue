@@ -7,14 +7,14 @@
 					<li>
 						<router-link @click="toggleMenu" to="/signUp">SIGNUP</router-link>
 					</li>
-                    <li>
+                    <!-- <li>
 						<router-link @click="toggleMenu" to="/Contact">CONTACT</router-link>
 					</li>
 					<li>
 						<router-link @click="toggleMenu" to="/Admin"
 							>ADMIN</router-link
 						>
-					</li>
+					</li> -->
 	</div>
 </template>
 <script>

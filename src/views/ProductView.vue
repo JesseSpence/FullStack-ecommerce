@@ -1,21 +1,21 @@
 <template>
-	<h1>Fallout Kings</h1>
+	<h1>This Months Selected products . . . </h1>
 	<section>	
 	<div v-if="!products" class="loader loader--style3" title="2">
-  idk
+ <img src="https://i.ibb.co/xC5pby0/giphy-5.gif">
 </div>
-		<div v-for="product in products" :key="product.product_id" class="products">
-		<h1>{{product.name}}</h1>
-		<img :src="product.image" :alt="product.product_id">
-		<div></div>
-		<button @click="deleteProduct(product.product_id)">DEL</button>
-		<p>R {{product.price}}</p>
-		</div>	
+		<Product v-for="product in products" :key="product.product_id" class="products" :product="product">
+		
+		</Product>	
 	
 	</section>
 </template>
 <script>
+import Product from '@/components/Product.vue';
 export default {
+	components:{
+    Product
+},
 	    data(){
         return{
             product:{
@@ -55,7 +55,7 @@ export default {
 		}
 </script>
 <style scoped>
-
+h1{color:rgb(246, 203, 94, 0.655)}
 section{
 	display: flex;
 	justify-content: center;

@@ -29,12 +29,14 @@
                                 <p>Lorem ipsum dolor sit amet, consec tetur adipisicing elit, sed do eiusmod tempor incididuntut consec tetur adipisicing
                                 elit,Lorem ipsum dolor sit amet.</p>
                             </div>
-                            <div class="footer-social-icon">
-                                <span>Follow us:</span>
+                            <div>
+                                <span class="followus">Follow us:</span>
+                                <div class="footer-social-icon">
                                 <a href="https://www.facebook.com" target="_blank">Facebook</a>
                                 <a href="https://www.twitter.com" target="_blank">Twitter</a>
                                 <a href="https://www.instagram.com" target="_blank">Instagram</a>
                                 <a href="https://github.com" target="_blank">GitHub</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -87,7 +89,7 @@ ul {
   display: inline-block;
 }
 .cta-text h4 {
-  color: gold;
+  color: rgba(246, 203, 94, 0.755);
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 2px;
@@ -95,6 +97,10 @@ ul {
 .cta-text span {
   color: #757575;
   font-size: 15px;
+}
+.followus{
+     color: rgba(246, 203, 94, 0.755);
+    font-size: 1.5rem;
 }
 .footer-content {
   position: relative;
@@ -107,7 +113,7 @@ ul {
   line-height: 28px;
 }
 .footer-social-icon span {
-  color: gold;
+  color: rgba(246, 203, 94, 0.755);
   display: block;
   font-size: 20px;
   font-weight: 700;
@@ -115,17 +121,25 @@ ul {
   margin-bottom: 20px;
 }
 .footer-social-icon a {
-  color: silver;
+  color: #797373 !important;
   font-size: 16px;
   margin-right: 15px;
 }
+div.footer-social-icon{
+  display:flex;
+  margin-top: 2%;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+}
 .footer-social-icon a:hover {
-  color: gold;
+  color: rgba(246, 203, 94, 0.755);
   font-size: 16px;
   margin-right: 15px;
 }
 .footer-widget-heading h3 {
-  color: gold;
+  color: rgba(246, 203, 94, 0.755);
   font-size: 20px;
   font-weight: 600;
   margin:40px 0 40px 0;
@@ -159,7 +173,7 @@ ul {
 .subscribe-form input {
   width: 100%;
   padding: 14px 28px;
-  background: #2E2E2E;
+  background: #2e2e2e4e;
   border: 1px solid #2E2E2E;
   color: #fff;
 }
@@ -169,12 +183,11 @@ ul {
     color:silver;
     background: rgb(10, 10, 10);
     padding: 13px 20px;
-    border: 1px solid gold;
+    border: 1px solid rgba(246, 203, 94, 0.755);
     top: 0;
 }
 .copyright-area{
-  background-color: rgb(10, 10, 10);
-  background-image: radial-gradient(at 75% 27% , silver 0, transparent 19%),radial-gradient(at 50% 71%, rgb(34, 30, 5) 0, transparent 18%);
+  background-color: var(--background-color);
   padding: 25px 0;
   margin-top: 30px;
 }
@@ -189,7 +202,7 @@ ul {
   margin-left: 20px;
 }
 .footer-menu li:hover a{
-  color: gold;
+  color: rgba(246, 203, 94, 0.755);
 }
 .footer-menu li a {
   font-size: 14px;

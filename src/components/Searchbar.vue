@@ -1,10 +1,11 @@
 <template>
-	<button @click="toggleBar"><router-link to="/ProductView"><i class="fa-solid fa-magnifying-glass"></i></router-link></button>
+	<button  @click="toggleBar"><router-link to="/ProductView"><i class="fa-solid fa-magnifying-glass"></i></router-link></button>
 	<div v-if="active" id="searchInput">
-		<input v-model="search" type="text" placeholder="Looking for something..."/>	
+		<input  v-model="search" type="text" placeholder="Looking for something..."/>	
 	</div>
 </template>
-<script> 
+<script>
+
 	export default {
 		props: [],
 		data() {
@@ -16,21 +17,29 @@
 			toggleBar() {
 				this.active = !this.active;
 			},
+			hide () {
+      this.active = false
+    }
 		},
-		mounted() {
-		},
-	};
+	mounted() {
+			this.popupItem = this.$el
+	},
+
+    
+}
+
 </script>
 <style scoped>
-	#searchInput{
+	input{
 		position: fixed;
-		top: 3%;
+		top: 4%;
 		right:1%;
         width: 350px;
+	border-radius: 20px;
         transition: transform 4000ms ease-in-out;
 		transform: translate(-50%, -50%);
-		background:rgba(246, 203, 94, 0.755);
-		padding:5px;
+		background:rgba(38, 37, 34, 0.812);
+		padding:3px;
 		z-index: 100;
 	}
 	a{color:black}
@@ -58,5 +67,12 @@
 		color:black;
 		text-shadow: 1px 1px 2px rgb(30, 30, 29);
 		transform:scale(1.1)
+	}
+	@media screen and (max-width:696px) {
+		input{
+			transform: scale(0.7);
+			top:8%;
+			right:0%
+		}
 	}
 </style>

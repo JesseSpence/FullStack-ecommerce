@@ -7,7 +7,7 @@ export default createStore({
 		token:null,
 		products: null,
 		product: null,
-		orders:[],
+		order:null,
 	
 	},getters:{
       GetProducts(){
@@ -30,7 +30,7 @@ export default createStore({
 			state.products = products;
 		},
 		setOrders(state,orders){
-          state.orders = orders
+          state.order = order
 		}
 
 		// sortProductsByPrice: (state) => {
@@ -92,10 +92,9 @@ export default createStore({
 
 		// create user
 		signUp: async (context, payload) => {
-			// const { full_name, email, password, phone,country } = payload;
+			const { full_name, email, password, phone,country } = payload;
 			console.log( payload);
 			const res = await fetch("https://classic-store.herokuapp.com/users/register", {
-				mode:"cors",
 				method: "POST",
 				body:JSON.stringify({
 					full_name: payload.full_name,
@@ -113,6 +112,7 @@ export default createStore({
 			.then((data) => {
 
 					console.log(data);
+					context.commit("setUser",data)
 				});
 				console.log(res);
 		},
@@ -191,26 +191,25 @@ export default createStore({
 				.then(() => context.dispatch("ShowProducts"));
 			console.log(res);
 		},
-		addToPackage: async (context,order) => {
-			const res = await fetch("http://classic-store.herokuapp.com",{
-             method:"POST",
-			 body:JSON.stringify({
-				product:order.product,
-			   quantity:order.quantity
-			 }),
-			 headers:{
-				"Content-type": "application/json; charset=UTF-8",
-			 }
-			})
-			const data = res.json();
-			console.log(data);
+		addToPackage: async (state,order) => {
+          state.orders.push(order);
+		  return state.order
 		},
-		getPackage:async (context)=>{
-			const res = await fetch("https://classic-store.herokuapp.com/users/" + id,{
-				method:"GET"
-			});
-			const data = res.json();
-			console.log();
+		getPackage:async (state,id)=>{
+	      for (let i = 0; i < state.order.length; i++) {
+			if (i.product_id === id){
+				return i
+			}
+			
+		  }
+		},
+		deletePackage: async (state,id)=>{
+			if(id){
+				state.order.pop()
+			}
+		},
+		checkout: (state)=>{
+			state.order
 		}
 
 	},

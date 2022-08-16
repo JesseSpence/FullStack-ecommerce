@@ -2,7 +2,7 @@
 <router-link :to="{name:'ProductOne', params:{id:product.product_id}}" product="product" >
     <div>
       <h1>{{product.name}}</h1>
-      <img :src="product.image" :alt="product.product_id">
+      <img width="300" height="250" :src="product.image" :alt="product.product_id">
       <p>{{product.descriptions}}</p>
       <div class="productdetails">
 <h4><span><i class="fa-solid fa-dollar-sign"></i></span> {{product.price}}</h4> 
@@ -28,8 +28,11 @@ export default {
         color:rgb(246, 203, 94, 0.655) ;
     }
     .productdetails{
-        margin-top:2%;
         display:flex;
+        width: 26vw;
+        margin:5% 0 5% 0;
+        position: absolute;
+        bottom:0;
         justify-content: space-between;
     }
 </style>

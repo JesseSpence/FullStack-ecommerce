@@ -10,6 +10,7 @@
 <div class="item">
   <h2>{{item.name}}</h2>
 <p>{{item.descriptions}}</p>
+
 <div class="itemdeets">
   <p><span>In Stock = </span>{{item.stock}}</p>
   <p><span>Price = </span> <i class="fa-solid fa-dollar-sign"></i>{{item.price}}</p>
@@ -116,7 +117,9 @@ export default {
 </script>
 <style scoped>
 a{
-  margin:-5% 0 0 -8%;
+  position: absolute;
+  top:0;
+  left:0;
 }
 .fa-arrow-left-long{
   color: rgb(246, 203, 94, 0.755);
@@ -134,20 +137,58 @@ a{
   color:silver;
   background:rgba(0, 0, 0, 0.141);
   display:flex;
+  position: relative;
   padding:5%;
   justify-content: space-around;
 }
+
 h2{
   color: rgb(246, 203, 94, 0.755);
   margin-bottom:5%
 }
+
 .itemdeets{
 display:flex;
+flex-wrap:wrap;
 justify-content: space-between;
-margin-top:20%;
+position: absolute;
+right: 10%;
+bottom:20%;
 width: 50vw;
+
 }
 span{
   color: rgb(246, 203, 94, 0.755);
+}
+@media screen and (max-width:1000px) {
+  .itemdeets{
+    width:40vw;
+  }
+}
+@media screen and (max-width:805px) {
+  .itemdeets{
+    width:30vw;
+  }
+}
+@media screen and (max-width:629px) {
+  img{
+    width:200px;
+  }
+  .itemdeets{
+    position: initial;
+    margin: 5% 0 0 10%;
+  }
+}
+@media screen and (max-width:475px) {
+  img{
+    width:150px;
+  }
+  a{
+  top:-2%;
+}
+  .itemdeets{
+    position: initial;
+    margin: 5% 0 0 10%;
+  }
 }
 </style>

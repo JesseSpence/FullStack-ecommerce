@@ -154,33 +154,29 @@ export default createStore({
 	//    })
 		},
 
-		// create user
-		signUp: async (context, payload) => {
+		userSignup: async (context, payload) => {
 			// const { full_name, email, password, phone,country } = payload;
 			console.log( payload);
 			const res = await fetch("https://classic-store.herokuapp.com/users/register", {
 				mode:"no-cors",
-				
 				method: "POST",
 				body:JSON.stringify({
 					full_name: payload.full_name,
                     email: payload.email,
-					billing_address: "Address",
-					default_shipping_address:"ALl no",
                     password: payload.password,
                     phone: payload.phone,
-                    country: payload.country
+					country: payload.country,
+					user_type: payload.user_type
 				}),
 				headers: {
-					"Content-type": "application/json;",
-				}
+                    'Content-type': 'application/json; charset=UTF-8',
+                }
 			})
 			.then((res) => res.json())
 			.then((data) => {
 
-					console.log(data);
-				});
-				console.log(res);
+					console.log(data.results);
+				})
 		},
 
 		// open one card

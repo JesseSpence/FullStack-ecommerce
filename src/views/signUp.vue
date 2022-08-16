@@ -1,6 +1,6 @@
 <template>
 	<div class="signUpPage">
-		<form @submit.prevent="signUp">
+		<form method="POST" @submit="userSignup">
 			<div class="sign">
 			
 				<div class="user-box">
@@ -14,6 +14,20 @@
 				<div class="user-box">
 					<input type="text" v-model="password" />
 					<label>Password</label>
+				</div>
+				<div class="user-box">
+					<input type="text" v-model="country" />
+					<label>Country</label>
+				</div>
+				<div class="user-box">
+					<label>contact number</label>
+					<input type="text" v-model="phone" />
+				</div>
+				<div class="user-box">
+					<label> user type</label>
+					<select v-model="user_type"  name="user type" id="">
+						<option value="user"> Customer </option>
+					</select>
 				</div>
 
 				<button id="signup" type="submit">Sign Up</button>
@@ -30,35 +44,41 @@
 	</div>
 </template>
 
-<!-- <script>
+<script>
 
 	export default {
 		data() {
 			return {
-				email: "",
-				password: "",
-				role: "",
-				full_name: "",
+				full_name: null,
+				email: null,
+				password: null,
+				country:null,
+				phone: null,
+				user_type: null,
 			};
 		},
-		computed: {
-			user() {
-				return this.$store.state.user;
-			},
-		},
-		methods: {
-			signUp() {
-				return this.$store.dispatch("signUp", {
-					full_name: this.full_name,
-					email: this.email,
-					password: this.password,
-					role: this.role,
-				});
-			},
-		},
-	};
+		// computed: {
+		// 	user() {
+		// 		return this.$store.state.user;
+		// 	},
+		// },
+		methods:{
+    userSignup(event){
+      event.preventDefault();
+      const user = {
+        full_name: this.full_name,
+        country: this.country,
+        phone: this.phone,
+        email:this.email,
+		  password: this.password,
+		user_type: this.user_type
+      }
+      this.$store.dispatch('userSignup',user);
+    }
+  }
+}
 </script>
--->
+
 <style scoped>
 .signUpPage{
 	border-radius: 20px;
@@ -67,6 +87,9 @@ height:fit-content;
 width:60vw;
 margin:5% auto;
 padding:.5%;
+	}
+	select{
+		background: none;
 	}
 	.sign{
 		color:silver;
@@ -88,17 +111,16 @@ input{background-color:silver}
 		transition:all ease-in-out .5s;
 	background:rgba(246, 203, 94, 0.755);
 	padding:1%;
-  color:silver;
-	background:rgb(0, 0, 0);
+  color:black;
 	font-size: 1.2rem;
   font-family: 'Cinzel', serif;
-	border:solid 2px rgba(246, 203, 94, 0.755);
 	border-radius: 20px;
 	margin:1% 0 1.5% 0;
 }
 #signup:hover{
-	color:black;
-  background:rgba(246, 203, 94, 0.755);
+	color:silver !important;
+	border:solid 2px rgba(246, 203, 94, 0.755);
+  background:var(--background-color);
 }
 #signup:active{
 	font-size: small;

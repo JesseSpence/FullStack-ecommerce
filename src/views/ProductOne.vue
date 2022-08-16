@@ -1,14 +1,23 @@
 <template>
-<router-link to="/ProductView"><button>Backx``</button></router-link>
+
 <div v-if="product"></div>
    
-<div v-for="item in product" :key="item.product_id" >
-
-<h2>{{item.name}}</h2>
+<div class="product-box" v-for="item in product" :key="item.product_id" >
+<router-link to="/ProductView"><button><i class="fa-solid fa-arrow-left-long"></i></button></router-link>
 <div>
-    <img :src="item.image" :alt="item.name">
+    <img :src="item.image" width="300" :alt="item.name">
 </div>
+<div class="item">
+  <h2>{{item.name}}</h2>
 <p>{{item.descriptions}}</p>
+<div class="itemdeets">
+  <p><span>In Stock = </span>{{item.stock}}</p>
+  <p><span>Price = </span> <i class="fa-solid fa-dollar-sign"></i>{{item.price}}</p>
+  <p><span>Category = </span>{{item.category}}</p>
+  <p><span><i class="fa-solid fa-dumbbell"></i>Weight = </span>{{item.weight}}</p>
+</div>
+</div>
+
 </div>
  <div v-if="user">
 <button @click="deleteProduct(product.product_id)">DEL</button>
@@ -105,6 +114,40 @@ export default {
         	
 }
 </script>
-<style lang="">
-    
+<style scoped>
+a{
+  margin:-5% 0 0 -8%;
+}
+.fa-arrow-left-long{
+  color: rgb(246, 203, 94, 0.755);
+  font-size: 2rem;
+}
+.fa-arrow-left-long{
+  transform: scale(1.1);
+}
+
+.fa-arrow-left-long:active, .fa-arrow-left-long:focus {
+  color: silver;
+}
+
+.product-box{
+  color:silver;
+  background:rgba(0, 0, 0, 0.141);
+  display:flex;
+  padding:5%;
+  justify-content: space-around;
+}
+h2{
+  color: rgb(246, 203, 94, 0.755);
+  margin-bottom:5%
+}
+.itemdeets{
+display:flex;
+justify-content: space-between;
+margin-top:20%;
+width: 50vw;
+}
+span{
+  color: rgb(246, 203, 94, 0.755);
+}
 </style>

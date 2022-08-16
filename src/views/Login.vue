@@ -99,21 +99,21 @@ padding:.5%;
 	a{text-decoration: none; color:rgba(246, 203, 94, 0.755)}
 	span{font-size: .8rem;color:rgba(246, 203, 94, 0.755)}
 input{background-color:silver}
+
 	#login{
 		transition:all ease-in-out .5s;
 	background:rgba(246, 203, 94, 0.755);
 	padding:1%;
-  color:silver;
-	background:rgb(0, 0, 0);
+  color:black;
 	font-size: 1.2rem;
   font-family: 'Cinzel', serif;
-	border:solid 2px rgba(246, 203, 94, 0.755);
 	border-radius: 20px;
 	margin:1% 0 1.5% 0;
 }
 #login:hover{
-	color:black;
-  background:rgba(246, 203, 94, 0.755);
+	color:silver;
+	border:solid 2px rgba(246, 203, 94, 0.755);
+  background:var(--background-color);
 }
 #login:active{
 	font-size: small;

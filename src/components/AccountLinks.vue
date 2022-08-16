@@ -48,7 +48,7 @@ a{
        flex-direction: column;
 		position: fixed;
 		top: 7%;
-		right:4%;
+		right:3%;
        padding:.7% .5% .7% .5%;
         height: fit-content;
         width:fit-content;

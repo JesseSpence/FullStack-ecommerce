@@ -67,6 +67,8 @@ section{
 	margin:4% 8%;
 	border: 2px solid rgba(246, 203, 94, 0.655);
 	border-radius: 10px;
+	background-color: rgba(0, 0, 0, 0.334);
+	box-shadow: 0px 10px 13px -7px #34390b, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 	padding:2%;
 }
 	

@@ -284,17 +284,16 @@ p{
 .shop{
 	transition:all ease-in-out .5s;
 	text-decoration: none !important;
-	background:rgba(246, 203, 94, 0.755);
 	padding:1%;
-  color:silver;
-	background:var(--background-color);
+	color:black;
+  background:rgba(246, 203, 94, 0.755);
 	font-size: 1.2rem;
 	border:solid 2px rgba(246, 203, 94, 0.755);
 	border-radius: 20px;
 }
 .shop:hover{
-	color:black;
-  background:rgba(246, 203, 94, 0.755);
+  color:silver;
+	background:var(--background-color);
 }
 .shop:focus{
 	font-size: small;

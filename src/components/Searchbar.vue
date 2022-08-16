@@ -32,17 +32,15 @@
 <style scoped>
 	input{
 		position: fixed;
-		top: 4%;
-		right:1%;
+		top: 2%;
+		right:10%;
         width: 350px;
 	border-radius: 20px;
-        transition: transform 4000ms ease-in-out;
-		transform: translate(-50%, -50%);
 		background:rgba(38, 37, 34, 0.812);
 		padding:3px;
 		z-index: 100;
 	}
-	a{color:black}
+	a{color:rgba(0, 0, 0, 0.634) }
     .fa-solid{
 		font-size:1.5rem;
 	}

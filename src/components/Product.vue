@@ -147,6 +147,9 @@ option {
 
         <router-link :to="{name:'ProductOne', params:{id:product.product_id}}" product="product" >
       <button>View</button>
+      <button @click="AddToOrder(product)">
+  Add to Package
+</button>
   </router-link>
     </div>
 </template>
@@ -154,7 +157,11 @@ option {
 export default {
   props:['product'],
 
-  
+      methods:{
+      AddToOrder(product){
+        this.$store.commit("AddOrder",product)
+      }
+}
 }
 </script>
 <style lang="">

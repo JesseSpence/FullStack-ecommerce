@@ -10,42 +10,29 @@
 </div>
 <p>{{item.descriptions}}</p>
 </div>
+<button @click="AddToOrder(item)">
+  Add to Package
+</button>
 
     
 </template>
 <script>
 
 export default {
-     props:["product_id"],
-    	    data(){
-        return{
-
-            product:{
-             sku:"",
-             name:"",
-             price: "",
-             weight:"",
-             descriptions:"",
-             thumbnail:"",
-             image:"",
-             category:"",
-             create_date:"",  
-             stock:""
-    
-            },
-			active:false
-        }
-            },
-   
+     props:["product_id"],  
     mounted(){
         this.$store.dispatch("getProduct",this.$route.params.id);
         
     },
-
     computed:{
         product(){
           return  this.$store.state.product
         }
+    },
+    methods:{
+      AddToOrder(product){
+        this.$store.commit("AddOrder",product)
+      }
     }
         	
 }

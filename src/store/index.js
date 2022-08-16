@@ -1,13 +1,14 @@
 import router from "@/router";
 import { createStore } from "vuex";
 
+
 export default createStore({
 	state: {
 		user: null,
 		token:null,
 		products: null,
 		product: null,
-		order:null,
+		order:[],
 	
 	},getters:{
       GetProducts(){
@@ -29,8 +30,12 @@ export default createStore({
 		setProducts(state, products){
 			state.products = products;
 		},
-		setOrders(state,orders){
-          state.order = order
+		AddOrder(state,product){
+			console.log(product);
+		state.order.push(product);
+		},
+		deleteInOrder(state,item){
+			state.order.splice(item,1)
 		}
 
 		// sortProductsByPrice: (state) => {
@@ -191,11 +196,18 @@ export default createStore({
 				.then(() => context.dispatch("ShowProducts"));
 			console.log(res);
 		},
-		addToPackage: async (state,order) => {
-          state.orders.push(order);
-		  return state.order
+		addToPackage: async (context,id) => {
+		fetch("https://classic-store.herokuapp.com/products/" + id)
+		.then((res) => res.json())
+		.then((product) => {
+             console.log(product[0]);
+			context.commit('AddOrder',product[0])
+		
+		}
+			);
+          
 		},
-		getPackage:async (state,id)=>{
+		getPackageOne:async (state,id)=>{
 	      for (let i = 0; i < state.order.length; i++) {
 			if (i.product_id === id){
 				return i
@@ -203,13 +215,21 @@ export default createStore({
 			
 		  }
 		},
+		getPackage:(state)=>{
+         return state.order,
+		 console.log(state.order)
+		}
+		,
 		deletePackage: async (state,id)=>{
 			if(id){
 				state.order.pop()
 			}
 		},
 		checkout: (state)=>{
-			state.order
+			state.order = null
+			router.push({
+				name:'Order'
+			})
 		}
 
 	},

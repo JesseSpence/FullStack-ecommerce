@@ -34,12 +34,9 @@
 	
 	</div>
   </div> 
-  <Contact/>
 </template>
 
 <script>
-
-import Contact from "../components/Contact.vue"
 import DecorationBox from "../components/decorationBox.vue";
 export default {
   data() {
@@ -130,7 +127,6 @@ export default {
     };
   },
   components: {
-    Contact,
     DecorationBox
 },
   methods: {

@@ -10,6 +10,7 @@
 		props: [],
 		data() {
 			return {
+				search:"",
 				active: false,
 			};
 		},
@@ -24,9 +25,22 @@
 	mounted() {
 			this.popupItem = this.$el
 	},
+	computed: {
+		filteredProducts() {
+				return this.$store.state.products?.filter((product) => {
+					let isMatch = true;
+					if (!product.name
+						.toLowerCase()
+						.includes(this.search.toLowerCase()))
+						isMatch = false;
+					// if (this.category !== "all" && product.category !== this.category) isMatch = false;
+					// if (this.company !== "all" && product.company !== this.company) isMatch = false;
+					return isMatch;	
+				});
+			},
+	},
+	}
 
-    
-}
 
 </script>
 <style scoped>

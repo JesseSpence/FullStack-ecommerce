@@ -1,8 +1,9 @@
 <template>
 	<nav id="nav" class="navbar">
 	<router-link @click="homeText()" to="/"><img id="nav-logo" src="https://i.ibb.co/3SV7mWn/mens-club-suit-removebg-preview.png" alt="mens-club-suit-removebg-preview"></router-link>
+	
 	<div class="links">
-				<Searchbar/>
+				<!-- <Searchbar/> -->
 
 		      <AccountLinks/>
 		

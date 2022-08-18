@@ -2,19 +2,19 @@
 	<button @click="toggleMenu"><i  class="fa-solid fa-user-tie"></i></button>
 	<div v-if="linksactive" id="account-links">
 		<li class="nav-item">
-						<router-link @click="toggleMenu" to="/Login">LOGIN</router-link>
+						<router-link @click="toggleMenu" to="/Login">Login</router-link>
 					</li>
 					<li>
-						<router-link @click="toggleMenu" to="/signUp">SIGNUP</router-link>
+						<router-link @click="toggleMenu" to="/signUp">Sign up</router-link>
 					</li>
-                    <!-- <li>
-						<router-link @click="toggleMenu" to="/Contact">CONTACT</router-link>
+                    <li>
+						<router-link @click="toggleMenu" to="/ProductAddition">Sell</router-link>
 					</li>
 					<li>
 						<router-link @click="toggleMenu" to="/Admin"
-							>ADMIN</router-link
+							>Administrator</router-link
 						>
-					</li> -->
+					</li>
 	</div>
 </template>
 <script>
@@ -40,7 +40,7 @@ li{
     text-decoration: none !important;
 }
 a{
-    color:rgba(0, 0, 0, 0.634);
+    color:rgb(0, 0, 0);
     font-size: small;
 }
 	#account-links{

@@ -26,8 +26,9 @@
  Update
 </button>
 </div>
-
-<!-- Button trigger modal -->
+<button title="add to package" @click="AddToOrder(product)">
+  +
+</button>
 
 
 <!-- Modal -->
@@ -107,7 +108,11 @@ export default {
     },	methods: {
 		deleteProduct(id){
 				return this.$store.dispatch("deleteProduct",id)
-			},
+      },
+      AddToOrder(product){
+        this.$store.commit("AddOrder",product)
+      },
+
 			Modal(id){
 				this.modal=true;
 			}

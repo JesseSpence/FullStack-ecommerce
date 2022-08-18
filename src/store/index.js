@@ -44,10 +44,11 @@ var TxtRotate = function(el, toRotate, period) {
 export default createStore({
 	state: {
 		user: null,
+		asc: true,
 		token:null,
 		products: null,
 		product: null,
-		orders:[],
+		order:[],
 	
 	},
 	getters:{
@@ -70,9 +71,13 @@ export default createStore({
 		setProducts: (state, products) => {
 			state.products = products;
 		},
-		setOrders(state,orders){
-			state.orders = orders
-		  },
+		AddOrder(state,product){
+			console.log(product);
+		state.order.push(product);
+		},
+		deleteInOrder(state,item){
+			state.order.splice(item,1)
+		},
 
 		sortProductsByPrice: (state) => {
 			state.products = state.products.sort((a, b) => {
@@ -114,7 +119,7 @@ export default createStore({
 		ShowProducts: async (context) => {
 			const res =	await fetch("https://classic-store.herokuapp.com/products")
 			.then(res => res.json())
-			.then(data => context.commit("setProducts",data) );	
+			.then(products => context.commit("setProducts", products) );	
 		},
 		login: async (context,payload) => {
 			 const {email,password} = payload
@@ -155,7 +160,7 @@ export default createStore({
 		},
 
 		userSignup: async (context, payload) => {
-			// const { full_name, email, password, phone,country } = payload;
+			// const { full_name, email, password, phone,country, user_type} = payload;
 			console.log( payload);
 			const res = await fetch("https://classic-store.herokuapp.com/users/register", {
 				mode:"no-cors",
@@ -174,7 +179,6 @@ export default createStore({
 			})
 			.then((res) => res.json())
 			.then((data) => {
-
 					console.log(data.results);
 				})
 		},
@@ -253,27 +257,42 @@ export default createStore({
 				.then(() => context.dispatch("ShowProducts"));
 			console.log(res);
 		},
-		addToPackage: async (context,order) => {
-			const res = await fetch("http://classic-store.herokuapp.com",{
-             method:"POST",
-			 body:JSON.stringify({
-				product:order.product,
-			   quantity:order.quantity
-			 }),
-			 headers:{
-				"Content-type": "application/json; charset=UTF-8",
-			 }
-			})
-			const data = res.json();
-			console.log(data);
-		},
-		getPackage:async (context)=>{
-			const res = await fetch("https://classic-store.herokuapp.com/users/" + id,{
-				method:"GET"
-			});
-			const data = res.json();
-			console.log();
-		}
-
-	},
-});
+		addToPackage: async (context,id) => {
+			fetch("https://classic-store.herokuapp.com/products/" + id)
+			.then((res) => res.json())
+			.then((product) => {
+				 console.log(product[0]);
+				context.commit('AddOrder',product[0])
+			
+			}
+				);
+			  
+			},
+			getPackageOne:async (state,id)=>{
+				for (let i = 0; i < state.order.length; i++) {
+				  if (i.product_id === id){
+					  return i
+				  }
+				  
+				}
+			  },
+			  getPackage:(state)=>{
+			   return state.order,
+			   console.log(state.order)
+			  }
+			  ,
+			  deletePackage: async (state,id)=>{
+				  if(id){
+					  state.order.pop()
+				  }
+			  },
+			  checkout: (state)=>{
+				  state.order = null
+				  router.push({
+					  name:'Order'
+				  })
+			  }
+	  
+		  },
+	  });
+	  

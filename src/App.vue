@@ -4,11 +4,13 @@
 <div id="MyContainer">
   <router-view/>
   </div>
+  
+  <Contact/>
 </template>
 
 <script>
 import Navbar from "./components/Navbar.vue";
-
+import Contact from "./components/Contact.vue";
 export default {
   data() {
     return {
@@ -17,6 +19,7 @@ export default {
     }
   },
   components: {
+    Contact,
     Navbar,
   },
   methods:{
